@@ -8,9 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "sf-mono": ['"SF Mono"', "monospace"],
+        calibre: ['"Calibre"', "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#27BBA0",
+        secondary: "#7A7A7A",
       },
     },
   },
