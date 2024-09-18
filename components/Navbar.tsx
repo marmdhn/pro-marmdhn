@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="h-[100px] relative flex items-center justify-between">
         <div className="col-span-1 me-auto">
           <Link href="/" className="hidden sm:block">
-            <Image src="/logo.svg" alt="Logo" width={75} height={24} priority />
+            <Image src="/logo.svg" alt="Logo" width={60} height={24} priority />
           </Link>
         </div>
         <div className="col-span-1">
@@ -43,16 +43,6 @@ const Navbar = () => {
               Experience
             </Link>
             <Link
-              href="/games"
-              className={`text-gray-900 px-3 py-1 rounded-md text-lg font-semibold ${
-                activePath.includes("/games")
-                  ? "text-primary dark:text-primary"
-                  : "hover:text-primary dark:hover:text-primary dark:text-white"
-              } transition-all duration-200`}
-            >
-              Games
-            </Link>
-            <Link
               href="/gallery"
               className={`text-gray-900 px-3 py-1 rounded-md text-lg font-semibold ${
                 activePath === "/gallery"
@@ -74,7 +64,7 @@ const Navbar = () => {
             </Link>
             <Link href="/gallery" className="bg-primary rounded-md">
               <div
-                className={`px-3 py-1 text-primary bg-background rounded-md text-lg font-semibold border border-primary hover:translate-y-[-0.25rem] hover:translate-x-[-0.25rem] transition-transform duration-300 ease-in-out`}
+                className={`px-3 py-1 text-primary bg-background rounded-md text-lg font-semibold border border-primary hover:translate-y-[-0.25rem] hover:translate-x-[-0.25rem] transition-transform duration-400 will-change-transform`}
               >
                 Resume
               </div>
