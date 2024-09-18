@@ -11,7 +11,10 @@ export default function Home() {
         className="snap-start flex justify-center items-center relative"
       >
         <div className="text-center mb-8">
-          <div className="text-8xl font-bold text-primary">MARMDHN</div>
+          <div className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-transparent via-primary to-transparent animate-shine bg-[length:200%_200%]">
+            MARMDHN
+          </div>
+
           <div className="font-adelia text-4xl text-secondary">
             Muhammad Akbar Ramadhan
           </div>
