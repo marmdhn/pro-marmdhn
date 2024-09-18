@@ -11,7 +11,7 @@ const config: Config = {
       keyframes: {
         "slide-left-right": {
           "0%": { transform: "translateX(0)" },
-          "50%": { transform: "translateX(60vw)" },
+          "50%": { transform: "translateX(60vw) translateY(150px)" },
           "100%": { transform: "translateX(0)" },
         },
         shine: {
