@@ -21,6 +21,7 @@ const config: Config = {
       fontFamily: {
         "sf-mono": ['"SF Mono"', "monospace"],
         calibre: ['"Calibre"', "sans-serif"],
+        'adelia': ['"Adelia"', 'cursive'],
       },
       colors: {
         background: "var(--background)",
