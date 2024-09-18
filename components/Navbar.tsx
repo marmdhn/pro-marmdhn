@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import PrimaryButton from "@/components/PrimaryButton";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -62,12 +63,8 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Link href="/gallery" className="bg-primary rounded-md">
-              <div
-                className={`px-3 py-1 text-primary bg-background rounded-md text-lg font-semibold border border-primary hover:translate-y-[-0.25rem] hover:translate-x-[-0.25rem] transition-transform duration-400 will-change-transform`}
-              >
-                Resume
-              </div>
+            <Link href="/gallery">
+              <PrimaryButton btnText="Resume" />
             </Link>
           </div>
         </div>
