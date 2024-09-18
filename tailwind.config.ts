@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "slide-left-right": {
+          "0%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(60vw)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        "slide-left-right": "slide-left-right 20s ease-in-out infinite",
+      },
       fontFamily: {
         "sf-mono": ['"SF Mono"', "monospace"],
         calibre: ['"Calibre"', "sans-serif"],
