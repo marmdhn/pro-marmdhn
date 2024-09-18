@@ -4,14 +4,21 @@
 
 @font-face {
   font-family: 'SF Mono';
-  src: url('../public/fonts/SFMonoRegular.otf') format('truetype');
+  src: url('../public/fonts/SFMonoRegular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Calibre';
-  src: url('../public/fonts/CalibreRegular.otf') format('truetype');
+  src: url('../public/fonts/CalibreRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelia';
+  src: url('../public/fonts/adelia.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
