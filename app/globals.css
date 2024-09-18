@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'SF Mono';
+  src: url('../public/fonts/SFMonoRegular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../public/fonts/CalibreRegular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -9,7 +24,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1B1C21;
     --foreground: #ededed;
   }
 }
@@ -17,11 +32,11 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Calibre', sans-serif;
 }
 
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-wrap: normal;
   }
 }
