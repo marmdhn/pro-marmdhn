@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="max-w-7xl px-8 xl:px-0 mx-auto h-full">
@@ -10,14 +12,30 @@ export default function Home() {
       >
         <div className="text-center mb-8">
           <div className="text-8xl font-bold text-primary">MARMDHN</div>
-          <div className="text-4xl font-bold text-secondary">
+          <div className="font-adelia text-4xl text-secondary">
             Muhammad Akbar Ramadhan
           </div>
         </div>
 
-        <div className="absolute bottom-24">
-          <span>Scroll Me</span>
-        </div>
+        <Link href={""} className="absolute bottom-24 text-center">
+          <span className="text-xl text-primary italic">Scroll Me</span>
+          <div className="mt-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 mx-auto text-primary motion-safe:animate-bounce"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+        </Link>
       </section>
 
       {/* Section 2 */}
