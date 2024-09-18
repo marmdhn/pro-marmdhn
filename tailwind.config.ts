@@ -14,14 +14,22 @@ const config: Config = {
           "50%": { transform: "translateX(60vw)" },
           "100%": { transform: "translateX(0)" },
         },
+        shine: {
+          "0%": { backgroundPosition: "100% 50%" },
+          "25%": { backgroundPosition: "50% 50%" },
+          "50%": { backgroundPosition: "0% 50%" },
+          "75%": { backgroundPosition: "50% 50%" },
+          "100%": { backgroundPosition: "100% 50%" },
+        },
       },
       animation: {
         "slide-left-right": "slide-left-right 20s ease-in-out infinite",
+        shine: "shine 20s ease-in-out infinite",
       },
       fontFamily: {
         "sf-mono": ['"SF Mono"', "monospace"],
         calibre: ['"Calibre"', "sans-serif"],
-        'adelia': ['"Adelia"', 'cursive'],
+        adelia: ['"Adelia"', "cursive"],
       },
       colors: {
         background: "var(--background)",
