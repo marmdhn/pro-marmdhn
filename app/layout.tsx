@@ -15,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased px-[50px] pb-[50px]`}>
+      <body className={`antialiased`}>
         <Navbar />
-        {children}
-        <Footer />
+        <div className="px-[50px] pb-[50px]">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
