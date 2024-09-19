@@ -1,6 +1,9 @@
 import type { Config } from "tailwindcss";
+import daisyui from "daisyui";
+import tailwindScrollbar from "tailwind-scrollbar";
 
-const config: Config = {
+const config: Partial<Config> = {
+  plugins: [daisyui, tailwindScrollbar],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -36,9 +39,9 @@ const config: Config = {
         foreground: "var(--foreground)",
         primary: "#27BBA0",
         secondary: "#7A7A7A",
+        "text-secondary": "#BFBFBF",
       },
     },
   },
-  plugins: [],
 };
 export default config;
