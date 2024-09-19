@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import Link from "next/Link";
+import { Link as LinkElement } from "react-scroll";
 import PrimaryButton from "@/components/PrimaryButton";
 
 const Navbar = () => {
@@ -46,49 +47,49 @@ const Navbar = () => {
     >
       <div className="h-[25px] my-[25px] relative flex items-center justify-between">
         <div className="col-span-1 me-auto">
-          <Link
+          <LinkElement
             to="hero"
             smooth={true}
             duration={500}
             className="hidden sm:block hover:cursor-pointer"
           >
             <Image src="/logo.svg" alt="Logo" width={75} height={40} priority />
-          </Link>
+          </LinkElement>
         </div>
         <div className="col-span-1">
           <div className="space-x-4 justify-center items-center hidden sm:flex">
-            <Link
+            <LinkElement
               to="about"
               smooth={true}
               duration={500}
               className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
             >
               About
-            </Link>
-            <Link
+            </LinkElement>
+            <LinkElement
               to="experience"
               smooth={true}
               duration={500}
               className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
             >
               Experience
-            </Link>
-            <Link
+            </LinkElement>
+            <LinkElement
               to="work"
               smooth={true}
               duration={500}
               className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
             >
               Work
-            </Link>
-            <Link
+            </LinkElement>
+            <LinkElement
               to="contact"
               smooth={true}
               duration={500}
               className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
             >
               Contact
-            </Link>
+            </LinkElement>
             <Link href="/">
               <PrimaryButton btnText="Resume" />
             </Link>
