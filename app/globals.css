@@ -61,10 +61,15 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: 'Calibre', sans-serif;
+  overflow-x: hidden;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: normal;
   }
+}
+
+.section{
+  min-height: calc(100vh - 100px);
 }
