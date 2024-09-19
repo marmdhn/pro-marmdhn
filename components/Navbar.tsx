@@ -9,16 +9,42 @@ import PrimaryButton from "@/components/PrimaryButton";
 const Navbar = () => {
   const pathname = usePathname();
   const [activePath, setActivePath] = useState("");
+  const [scrollDirection, setScrollDirection] = useState("up");
+
   useEffect(() => {
     setActivePath(pathname);
   }, [pathname]);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down"); // Scroll ke bawah
+      } else {
+        setScrollDirection("up"); // Scroll ke atas
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="bg-transparent transition-all duration-200 sticky top-0 z-50 overflow-hidden">
-      <div className="h-[50px] my-[25px] relative flex items-center justify-between">
+    <nav
+      className={`bg-transparent backdrop-blur-2xl transition-all duration-300 sticky top-0 z-50 overflow-hidden ${
+        scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
+      <div className="h-[25px] my-[25px] relative flex items-center justify-between">
         <div className="col-span-1 me-auto">
           <Link href="/" className="hidden sm:block">
-            <Image src="/logo.svg" alt="Logo" width={95} height={40} priority />
+            <Image src="/logo.svg" alt="Logo" width={75} height={40} priority />
           </Link>
         </div>
         <div className="col-span-1">
