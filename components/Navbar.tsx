@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import { Link as LinkElement } from "react-scroll";
 import PrimaryButton from "@/components/PrimaryButton";
 
