@@ -15,17 +15,17 @@ const Navbar = () => {
 
   return (
     <nav className="bg-transparent transition-all duration-200 sticky top-0 z-50 overflow-hidden">
-      <div className="h-[100px] relative flex items-center justify-between">
+      <div className="h-[50px] my-[25px] relative flex items-center justify-between">
         <div className="col-span-1 me-auto">
           <Link href="/" className="hidden sm:block">
-            <Image src="/logo.svg" alt="Logo" width={60} height={24} priority />
+            <Image src="/logo.svg" alt="Logo" width={95} height={40} priority />
           </Link>
         </div>
         <div className="col-span-1">
           <div className="space-x-4 justify-center hidden sm:flex">
             <Link
               href="/about"
-              className={`text-gray-900 px-3 py-1 rounded-md text-lg font-semibold ${
+              className={`text-gray-900 px-3 pt-1 rounded-md text-xl font-semibold ${
                 activePath === "/about"
                   ? "text-primary dark:text-primary"
                   : "hover:text-primary dark:hover:text-primary dark:text-white"
@@ -35,7 +35,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/projects"
-              className={`text-gray-900 px-3 py-1 rounded-md text-lg font-semibold ${
+              className={`text-gray-900 px-3 pt-1 rounded-md text-xl font-semibold ${
                 activePath === "/projects"
                   ? "text-primary dark:text-primary"
                   : "hover:text-primary dark:hover:text-primary dark:text-white"
@@ -45,7 +45,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/gallery"
-              className={`text-gray-900 px-3 py-1 rounded-md text-lg font-semibold ${
+              className={`text-gray-900 px-3 pt-1 rounded-md text-xl font-semibold ${
                 activePath === "/gallery"
                   ? "text-primary dark:text-primary"
                   : "hover:text-primary dark:hover:text-primary dark:text-white"
@@ -55,7 +55,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/gallery"
-              className={`text-gray-900 px-3 py-1 rounded-md text-lg font-semibold ${
+              className={`text-gray-900 px-3 pt-1 rounded-md text-xl font-semibold ${
                 activePath === "/gallery"
                   ? "text-primary dark:text-primary"
                   : "hover:text-primary dark:hover:text-primary dark:text-white"
