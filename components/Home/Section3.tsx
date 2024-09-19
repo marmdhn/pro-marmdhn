@@ -1,6 +1,3 @@
-import { skills } from "@/data/skills";
-import { BsTriangleFill } from "react-icons/bs";
-import Image from "next/image";
 import { Experiences } from "@/data/experiences";
 
 const Section3 = () => {
