@@ -3,8 +3,8 @@ import { Experiences } from "@/data/experiences";
 const Section3 = () => {
   return (
     <section
-      id="section3"
-      className="section flex justify-center items-center relative w-full my-32"
+      id="experience"
+      className="section flex justify-center items-center relative w-full pt-16"
     >
       <div className="absolute left-0 flex items-center gap-10">
         <h2 className="text-3xl inline-block font-sf-mono mb-0">

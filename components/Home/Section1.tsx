@@ -1,9 +1,11 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "react-scroll";
 
 const Section1 = () => {
   return (
     <section
-      id="section1"
+      id="hero"
       className="section flex justify-center items-center relative"
     >
       <div className="text-center mb-8">
@@ -16,8 +18,15 @@ const Section1 = () => {
         </div>
       </div>
 
-      <Link href={""} className="absolute bottom-12 text-center">
-        <span className="text-xl text-primary italic">Scroll Me</span>
+      <Link
+        to="about"
+        smooth={true}
+        duration={500}
+        className="absolute bottom-12 text-center hover:cursor-pointer hover:scale-110 transition-transform duration-300 will-change-transform"
+      >
+        <span className="text-sm text-primary italic font-sf-mono">
+          Scroll Me
+        </span>
         <div className="mt-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"

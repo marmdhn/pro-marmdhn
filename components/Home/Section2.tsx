@@ -4,8 +4,11 @@ import Image from "next/image";
 
 const Section2 = () => {
   return (
-    <section id="section2" className="section flex justify-center items-center">
-      <div className="max-w-7xl  text-white py-10 px-16">
+    <section
+      id="about"
+      className="section flex justify-center items-center pt-16"
+    >
+      <div className="max-w-7xl text-white py-10 px-16">
         <div className="flex items-center">
           <div className="md:w-2/3 flex flex-col gap-5 text-lg">
             <div className="flex items-center gap-10">
