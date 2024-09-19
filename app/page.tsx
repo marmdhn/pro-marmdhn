@@ -2,6 +2,7 @@ import Section1 from "@/components/Home/Section1";
 import Section2 from "@/components/Home/Section2";
 import Section4 from "@/components/Home/Section4";
 import Section3 from "@/components/Home/Section3";
+import StickyElement from "@/components/Home/StickyElement";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
       <Section3 />
 
       <Section4 />
+
+      <StickyElement />
     </div>
   );
 }
