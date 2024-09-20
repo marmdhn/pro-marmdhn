@@ -6,7 +6,7 @@ const Section2 = () => {
   return (
     <section
       id="about"
-      className="section flex justify-center items-center pt-16"
+      className="section flex justify-center items-center py-20"
     >
       <div className="max-w-7xl text-white py-10 px-16">
         <div className="flex items-center">

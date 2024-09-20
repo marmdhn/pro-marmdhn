@@ -4,11 +4,11 @@ const Section3 = () => {
   return (
     <section
       id="experience"
-      className="section flex justify-center items-center relative w-full pt-16"
+      className="section flex justify-center items-center relative w-full py-20"
     >
       <div className="absolute left-0 flex items-center gap-10">
         <h2 className="text-3xl inline-block font-sf-mono mb-0">
-          Where I’ve Worked
+          Where I’ve <span className="text-primary">Worked</span>
         </h2>
         <div className="h-[1px] w-[300px] bg-secondary"></div>
       </div>
