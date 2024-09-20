@@ -28,14 +28,14 @@ const Section4 = () => {
               } gap-5`}
             >
               <div className="w-1/2">
-                <div className="relative group w-full">
+                <div className="relative group w-full overflow-hidden rounded-lg">
                   <Image
                     src={`/work/${work.imgUrl}`}
                     width={100}
                     height={100}
                     unoptimized
                     alt={work.title}
-                    className="rounded-lg shadow-lg w-full"
+                    className="rounded-lg shadow-lg w-full transition-transform duration-500 ease-in-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-primary opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-0 rounded-lg"></div>
                 </div>
@@ -47,7 +47,7 @@ const Section4 = () => {
                 }`}
               >
                 <div>
-                  <h3 className="text-primary font-sf-mono text-sm">
+                  <h3 className="text-primary font-sf-mono text-sm mb-2">
                     Featured Project
                   </h3>
                   <h2 className="text-2xl font-bold">{work.title}</h2>
@@ -79,7 +79,7 @@ const Section4 = () => {
                   href={work.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white hover:scale-110 transition-all duration-300"
+                  className="hover:text-primary hover:scale-110 transition-all duration-300"
                 >
                   <FaGithub size={24} />
                 </Link>
@@ -87,7 +87,7 @@ const Section4 = () => {
                   href={work.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white hover:scale-110 transition-all duration-300"
+                  className="hover:text-primary hover:scale-110 transition-all duration-300"
                 >
                   <FaExternalLinkAlt size={24} />
                 </Link>
