@@ -15,7 +15,7 @@ export default function ClientSideLayout({ children }: ClientSideLayoutProps) {
     const timer = setTimeout(() => {
       setIsFadingOut(true);
       setTimeout(() => setIsLoading(false), 1000);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
