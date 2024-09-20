@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Link as LinkElement } from "react-scroll";
 import PrimaryButton from "@/components/PrimaryButton";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [hasShadow, setHasShadow] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -32,15 +34,24 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
 
+    setTimeout(() => {
+      setIsFirstLoad(false);
+    }, 500);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 100 }}
+      transition={{ duration: 1 }}
       className={`px-[50px] transition-all duration-300 sticky top-0 z-50 overflow-hidden ${
-        scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
+        !isFirstLoad && scrollDirection === "down"
+          ? "-translate-y-full"
+          : "translate-y-0"
       } ${
         hasShadow ? "shadow-lg bg-[#1B1C21]/90" : "bg-transparent"
       } backdrop-blur-sm`}
@@ -96,7 +107,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
