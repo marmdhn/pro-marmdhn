@@ -27,7 +27,7 @@ const StickyElement = () => {
         to="hero"
         smooth={true}
         duration={500}
-        className="fixed bottom-[100px] right-0 z-50 -rotate-90 italic font-sf-mono text-sm text-secondary hover:cursor-pointer"
+        className="fixed bottom-[100px] right-0 z-50 -rotate-90 italic font-sf-mono text-sm text-secondary hover:cursor-pointer hover:text-white hover:scale-110 transition-all duration-300"
       >
         <span className="underline underline-offset-8">Front End</span>{" "}
         Developer
