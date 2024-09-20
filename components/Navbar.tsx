@@ -47,7 +47,7 @@ const Navbar = () => {
     <motion.nav
       initial={{ opacity: 0 }}
       animate={{ opacity: 100 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 2 }}
       className={`px-[50px] transition-all duration-300 sticky top-0 z-50 overflow-hidden ${
         !isFirstLoad && scrollDirection === "down"
           ? "-translate-y-full"
