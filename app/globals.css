@@ -24,7 +24,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -76,4 +76,23 @@ body {
 
 .section{
   min-height: calc(100vh - 75px);
+}
+
+#loading-svg {
+  height: 200px;
+  width: 200px;
+  stroke: white;
+  fill-opacity: 0;
+  stroke-width: 5px;
+  stroke-dasharray: 4500;
+  animation: draw 20s ease;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset:0;
+  }
 }
