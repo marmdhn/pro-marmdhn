@@ -7,7 +7,7 @@ const CircleShine = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 5 }}
+      transition={{ duration: 10 }}
       className="absolute z-10 -top-48 left-[220px] w-[400px] h-[400px] bg-primary rounded-full blur-[300px] animate-slide-left-right"
     ></motion.div>
   );
