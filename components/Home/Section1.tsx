@@ -5,16 +5,14 @@ import { motion } from "framer-motion";
 
 const Section1 = () => {
   return (
-    <section
+    <motion.section
       id="hero"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2 }}
       className="section flex justify-center items-center relative"
     >
-      <motion.div
-        className="text-center mb-8"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="text-center mb-8">
         <div className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-transparent via-primary to-transparent animate-shine bg-[length:200%_200%]">
           MARMDHN
         </div>
@@ -22,7 +20,7 @@ const Section1 = () => {
         <div className="font-adelia text-4xl text-secondary">
           Muhammad Akbar Ramadhan
         </div>
-      </motion.div>
+      </div>
 
       <Link
         to="about"
@@ -50,7 +48,7 @@ const Section1 = () => {
           </svg>
         </div>
       </Link>
-    </section>
+    </motion.section>
   );
 };
 
