@@ -50,8 +50,8 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #1B1C21;
+  --foreground: #ededed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,11 +81,11 @@ body {
 #loading-svg {
   height: 200px;
   width: 200px;
-  stroke: white;
+  stroke: #27BBA0;
   fill-opacity: 0;
   stroke-width: 5px;
   stroke-dasharray: 4500;
-  animation: draw 20s ease;
+  animation: draw 15s ease;
 }
 
 @keyframes draw {
