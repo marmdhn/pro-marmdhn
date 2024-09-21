@@ -6,11 +6,13 @@ import Link from "next/link";
 import { Link as LinkElement } from "react-scroll";
 import PrimaryButton from "@/components/PrimaryButton";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [hasShadow, setHasShadow] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -58,49 +60,71 @@ const Navbar = () => {
     >
       <div className="h-[25px] my-[25px] relative flex items-center justify-between">
         <div className="col-span-1 me-auto">
-          <LinkElement
-            to="hero"
-            smooth={true}
-            duration={500}
-            className="hidden sm:block hover:cursor-pointer"
-          >
-            <Image src="/logo.svg" alt="Logo" width={75} height={40} priority />
-          </LinkElement>
+          {pathname !== "/archive" ? (
+            <LinkElement
+              to="hero"
+              smooth={true}
+              duration={500}
+              className="hidden sm:block hover:cursor-pointer"
+            >
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={75}
+                height={40}
+                priority
+              />
+            </LinkElement>
+          ) : (
+            <Link href="/" className="hidden sm:block hover:cursor-pointer">
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={75}
+                height={40}
+                priority
+              />
+            </Link>
+          )}
         </div>
         <div className="col-span-1">
           <div className="space-x-4 justify-center items-center hidden sm:flex">
-            <LinkElement
-              to="about"
-              smooth={true}
-              duration={500}
-              className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
-            >
-              About
-            </LinkElement>
-            <LinkElement
-              to="experience"
-              smooth={true}
-              duration={500}
-              className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
-            >
-              Experience
-            </LinkElement>
-            <LinkElement
-              to="work"
-              smooth={true}
-              duration={500}
-              className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
-            >
-              Work
-            </LinkElement>
-            <LinkElement
-              to="contact"
-              smooth={true}
-              duration={500}
-              className={`font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer`}
-            >
-              Contact
-            </LinkElement>
+            {pathname !== "/archive" && (
+              <>
+                <LinkElement
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  About
+                </LinkElement>
+                <LinkElement
+                  to="experience"
+                  smooth={true}
+                  duration={500}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  Experience
+                </LinkElement>
+                <LinkElement
+                  to="work"
+                  smooth={true}
+                  duration={500}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  Work
+                </LinkElement>
+                <LinkElement
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  Contact
+                </LinkElement>
+              </>
+            )}
             <Link href="/">
               <PrimaryButton btnText="Resume" />
             </Link>
