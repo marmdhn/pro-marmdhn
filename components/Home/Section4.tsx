@@ -96,7 +96,7 @@ const Section4 = () => {
           ))}
         </div>
       </div>
-      <Link href={""} className="mt-32">
+      <Link href={"/archive"} className="mt-32">
         <PrimaryButton btnText={"View More"} />
       </Link>
     </section>
