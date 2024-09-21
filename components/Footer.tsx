@@ -5,8 +5,9 @@ const Footer = () => {
     <footer className="relative bottom-0">
       <div className="container mx-auto">
         <div className="w-full">
-          <p className="font-medium text-xl text-secondary text-center">
-            Design & Built by Muhammad Akbar Ramadhan
+          <p className="font-medium text-xs font-sf-mono text-secondary text-center">
+            Design & Built by{" "}
+            <span className="text-primary">Muhammad Akbar Ramadhan</span>
           </p>
         </div>
       </div>
