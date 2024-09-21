@@ -45,11 +45,26 @@ const Navbar = () => {
     };
   }, []);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 100 }}
-      transition={{ duration: 2 }}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
       className={`px-[50px] transition-all duration-300 sticky top-0 z-50 overflow-hidden ${
         !isFirstLoad && scrollDirection === "down"
           ? "-translate-y-full"
@@ -87,49 +102,62 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-        <div className="col-span-1">
+        <motion.div
+          className="col-span-1"
+          variants={containerVariants} // Apply stagger effect to children
+        >
           <div className="space-x-4 justify-center items-center hidden sm:flex">
             {pathname !== "/archive" && (
               <>
-                <LinkElement
-                  to="about"
-                  smooth={true}
-                  duration={500}
-                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                >
-                  About
-                </LinkElement>
-                <LinkElement
-                  to="experience"
-                  smooth={true}
-                  duration={500}
-                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                >
-                  Experience
-                </LinkElement>
-                <LinkElement
-                  to="work"
-                  smooth={true}
-                  duration={500}
-                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                >
-                  Work
-                </LinkElement>
-                <LinkElement
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                >
-                  Contact
-                </LinkElement>
+                <motion.div variants={itemVariants}>
+                  <LinkElement
+                    to="about"
+                    smooth={true}
+                    duration={500}
+                    className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                  >
+                    About
+                  </LinkElement>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <LinkElement
+                    to="experience"
+                    smooth={true}
+                    duration={500}
+                    className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                  >
+                    Experience
+                  </LinkElement>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <LinkElement
+                    to="work"
+                    smooth={true}
+                    duration={500}
+                    className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                  >
+                    Work
+                  </LinkElement>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <LinkElement
+                    to="contact"
+                    smooth={true}
+                    duration={500}
+                    className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                  >
+                    Contact
+                  </LinkElement>
+                </motion.div>
               </>
             )}
-            <Link href="/">
-              <PrimaryButton btnText="Resume" />
-            </Link>
+            <motion.div variants={itemVariants}>
+              <Link href="/">
+                <PrimaryButton btnText="Resume" />
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.nav>
   );
