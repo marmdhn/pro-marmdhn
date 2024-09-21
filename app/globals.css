@@ -44,6 +44,7 @@
   background: #585858;
 }
 
+/*Disabled ScrollBar Daisy UI*/
 *,
 *:hover {
   scrollbar-color: auto;
@@ -95,4 +96,10 @@ body {
   100% {
     stroke-dashoffset:0;
   }
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #27BBA0;
+  border-radius: 4px;
 }
