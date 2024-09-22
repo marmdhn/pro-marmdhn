@@ -102,10 +102,7 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-        <motion.div
-          className="col-span-1"
-          variants={containerVariants} // Apply stagger effect to children
-        >
+        <motion.div className="col-span-1" variants={containerVariants}>
           <div className="space-x-4 justify-center items-center hidden sm:flex">
             {pathname !== "/archive" && (
               <>
