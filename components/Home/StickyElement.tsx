@@ -1,7 +1,8 @@
 "use client";
 
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
-import { Link } from "react-scroll";
+import { Link as LinkElement } from "react-scroll";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const StickyElement = () => {
@@ -13,22 +14,28 @@ const StickyElement = () => {
     >
       <div className="fixed bottom-[50px] z-50">
         <div className="flex flex-col gap-4 text-white">
-          <FaInstagram
-            size={24}
-            className="hover:text-primary hover:-translate-y-0.5 hover:cursor-pointer transition-all duration-300"
-          />
-          <FaLinkedin
-            size={24}
-            className="hover:text-primary hover:-translate-y-0.5 hover:cursor-pointer transition-all duration-300"
-          />
-          <FaGithub
-            size={24}
-            className="hover:text-primary hover:-translate-y-0.5 hover:cursor-pointer transition-all duration-300"
-          />
+          <Link href="https://www.instagram.com/marmdhn_/" target="_blank">
+            <FaInstagram
+              size={24}
+              className="hover:text-primary hover:-translate-y-0.5 hover:cursor-pointer transition-all duration-300"
+            />
+          </Link>
+          <Link href="https://www.linkedin.com/in/marmdhn/" target="_blank">
+            <FaLinkedin
+              size={24}
+              className="hover:text-primary hover:-translate-y-0.5 hover:cursor-pointer transition-all duration-300"
+            />
+          </Link>
+          <Link href="https://github.com/marmdhn/" target="_blank">
+            <FaGithub
+              size={24}
+              className="hover:text-primary hover:-translate-y-0.5 hover:cursor-pointer transition-all duration-300"
+            />
+          </Link>
         </div>
       </div>
 
-      <Link
+      <LinkElement
         to="hero"
         smooth={true}
         duration={500}
@@ -36,7 +43,7 @@ const StickyElement = () => {
       >
         <span className="underline underline-offset-8">Front End</span>{" "}
         Developer
-      </Link>
+      </LinkElement>
     </motion.div>
   );
 };
