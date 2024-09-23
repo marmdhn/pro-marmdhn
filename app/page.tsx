@@ -8,7 +8,7 @@ import CircleShine from "@/components/CircleShine";
 
 export default function Home() {
   return (
-    <div className="px-8 xl:px-0 mx-auto h-full">
+    <div className="px-8 xl:px-0 mx-auto h-full overflow-x-hidden">
       <CircleShine />
       <Section1 />
       <Section2 />
