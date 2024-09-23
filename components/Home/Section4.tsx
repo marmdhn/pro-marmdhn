@@ -1,11 +1,49 @@
+"use client";
+
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
 import { Works } from "@/data/works";
 import PrimaryButton from "@/components/PrimaryButton";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const Section4 = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section
       id="work"
@@ -19,13 +57,20 @@ const Section4 = () => {
           <div className="h-[1px] w-[375px] bg-secondary"></div>
         </div>
 
-        <div className="flex flex-col gap-20">
+        <motion.div
+          className="flex flex-col gap-20"
+          ref={ref as React.LegacyRef<HTMLDivElement>}
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
           {Works.map((work, index) => (
-            <div
+            <motion.div
               key={index}
               className={`flex relative rounded-lg ${
                 index % 2 === 0 ? "flex-row" : "flex-row-reverse"
               } gap-5`}
+              variants={itemVariants}
             >
               <div className="w-1/2">
                 <div className="relative group w-full overflow-hidden rounded-lg">
@@ -92,9 +137,9 @@ const Section4 = () => {
                   <FaExternalLinkAlt size={24} />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <Link href={"/archive"} className="mt-32">
         <PrimaryButton btnText={"View More"} />

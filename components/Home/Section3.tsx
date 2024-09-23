@@ -61,7 +61,7 @@ const Section3 = () => {
         </h2>
         <motion.div
           className="h-[1px] w-[300px] bg-secondary"
-          variants={hrVariants} // Apply only opacity transition to hr
+          variants={hrVariants}
           initial="hidden"
           animate={controls}
         />
