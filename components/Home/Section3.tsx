@@ -53,14 +53,17 @@ const Section3 = () => {
   return (
     <section
       id="experience"
-      className="section flex justify-center items-center relative w-full py-20"
+      className="section flex flex-col lg:flex-row justify-center items-center relative w-full py-20"
     >
-      <div className="absolute left-0 flex items-center gap-10">
-        <h2 className="text-3xl inline-block font-sf-mono mb-0">
-          Where I’ve <span className="text-primary">Worked</span>
+      <div className="w-full flex justify-start items-center gap-2 lg:absolute lg:left-0 lg:gap-10 mb-10 lg:mb-0">
+        <h2 className="text-2xl lg:text-3xl font-sf-mono mb-0 text-start md:text-left">
+          Where I’ve{" "}
+          <span className="text-primary underline underline-offset-4 lg:no-underline">
+            Worked
+          </span>
         </h2>
         <motion.div
-          className="h-[1px] w-[300px] bg-secondary"
+          className="hidden lg:block h-[1px] w-[100px] md:w-[250px] lg:w-[75px] bg-secondary"
           variants={hrVariants}
           initial="hidden"
           animate={controls}
