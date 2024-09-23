@@ -13,11 +13,11 @@ const Section1 = () => {
       className="section flex justify-center items-center relative"
     >
       <div className="text-center mb-8">
-        <div className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-transparent via-primary to-transparent animate-shine bg-[length:200%_200%]">
+        <div className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-transparent via-primary to-transparent animate-shine bg-[length:200%_200%]">
           MARMDHN
         </div>
 
-        <div className="font-adelia text-4xl text-secondary">
+        <div className="font-adelia text-lg md:text-3xl lg:text-4xl text-secondary">
           Muhammad Akbar Ramadhan
         </div>
       </div>
@@ -26,7 +26,7 @@ const Section1 = () => {
         to="about"
         smooth={true}
         duration={500}
-        className="absolute bottom-12 text-center hover:cursor-pointer hover:scale-110 transition-transform duration-300 will-change-transform"
+        className="hidden md:block absolute bottom-12 text-center hover:cursor-pointer hover:scale-110 transition-transform duration-300 will-change-transform"
       >
         <span className="text-sm text-primary italic font-sf-mono">
           Scroll Me
