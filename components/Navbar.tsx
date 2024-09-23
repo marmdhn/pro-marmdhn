@@ -182,7 +182,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed bottom-4 left-4 right-4 bg-[#1B1C21]/90 shadow-lg backdrop-blur-sm md:hidden z-[999] py-2 rounded-xl"
+        className="fixed w-full bottom-0 bg-[#1B1C21]/90 shadow-lg backdrop-blur-sm md:hidden z-[999] py-2 rounded-xl"
       >
         <div className="flex justify-around items-center h-[60px] px-5">
           <LinkElement
@@ -191,7 +191,7 @@ const Navbar = () => {
             duration={500}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
-            <FaUser size={24} />
+            <FaUser size={20} />
             <span className="text-xs mt-1">About</span>
           </LinkElement>
 
@@ -201,13 +201,13 @@ const Navbar = () => {
             duration={500}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
-            <FaBriefcase size={24} />
+            <FaBriefcase size={20} />
             <span className="text-xs mt-1">Experience</span>
           </LinkElement>
 
           <Link href="/">
             <div className="mb-2">
-              <PrimaryButton btnText="" icon={<FaFileAlt size={24} />} />
+              <PrimaryButton btnText="" icon={<FaFileAlt size={20} />} />
             </div>
           </Link>
 
@@ -217,7 +217,7 @@ const Navbar = () => {
             duration={500}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
-            <FaLaptopCode size={28} />
+            <FaLaptopCode size={24} />
             <span className="text-xs mt-1">Work</span>
           </LinkElement>
 
@@ -227,7 +227,7 @@ const Navbar = () => {
             duration={500}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
-            <FaEnvelope size={24} />
+            <FaEnvelope size={20} />
             <span className="text-xs mt-1">Contact</span>
           </LinkElement>
         </div>
