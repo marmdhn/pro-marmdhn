@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <ClientSideLayout>
           <Navbar />
-          <div className="px-[50px] pb-[50px]">
+          <div className="px-0 md:px-[50px] pb-[50px]">
             {children}
             <Footer />
           </div>
