@@ -1,22 +1,67 @@
+"use client";
+
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 import StickyElement from "@/components/Home/StickyElement";
 import { Archives } from "@/data/archive";
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 1 } },
+};
+
+const slideUp = {
+  hidden: { y: 50, opacity: 0 },
+  visible: (i) => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: i * 0.2, duration: 0.6 },
+  }),
+};
 
 const ArchivePage = () => {
   return (
     <div className="min-h-screen px-8 xl:px-0 mx-auto h-full">
       <StickyElement />
-      <section className="flex flex-col justify-center items-center relative w-full pt-[100px]">
-        <div className="w-full max-w-7xl">
-          <div className="flex flex-col items-start gap-2 mb-20">
-            <span className="text-7xl font-bold">Archive</span>
-            <span className="font-sf-mono text-primary">
+      <motion.section
+        className="flex flex-col justify-center items-center relative w-full pt-[100px]"
+        variants={fadeIn}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div className="w-full max-w-7xl">
+          <motion.div
+            className="flex flex-col items-start gap-2 mb-20"
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.span
+              className="text-7xl font-bold"
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+            >
+              Archive
+            </motion.span>
+            <motion.span
+              className="font-sf-mono text-primary"
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+            >
               A list of things I’ve worked on
-            </span>
-          </div>
-          <div className="overflow-x-auto">
+            </motion.span>
+          </motion.div>
+
+          <motion.div
+            className="overflow-x-auto"
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+          >
             <table className="w-full table">
               <thead>
                 <tr className="text-xl">
@@ -29,9 +74,13 @@ const ArchivePage = () => {
               </thead>
               <tbody>
                 {Archives.map((archive, index) => (
-                  <tr
+                  <motion.tr
                     key={index}
                     className="text-xl hover:bg-[#262930FF] transition-colors duration-300"
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={slideUp}
                   >
                     <td className="text-primary font-sf-mono text-lg">
                       {archive.year}
@@ -67,13 +116,13 @@ const ArchivePage = () => {
                         )}
                       </div>
                     </td>
-                  </tr>
+                  </motion.tr>
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      </motion.section>
     </div>
   );
 };
