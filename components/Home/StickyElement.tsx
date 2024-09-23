@@ -12,7 +12,7 @@ const StickyElement = () => {
       animate={{ opacity: 100 }}
       transition={{ duration: 1 }}
     >
-      <div className="hidden md:fixed bottom-[50px] z-50">
+      <div className="hidden md:block fixed bottom-[50px] z-50">
         <div className="flex flex-col gap-4 text-white">
           <Link href="https://www.instagram.com/marmdhn_/" target="_blank">
             <FaInstagram
@@ -39,7 +39,7 @@ const StickyElement = () => {
         to="hero"
         smooth={true}
         duration={500}
-        className="hidden md:fixed bottom-[100px] right-0 z-50 -rotate-90 italic font-sf-mono text-sm text-white hover:cursor-pointer hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
+        className="hidden md:block fixed bottom-[100px] right-0 z-50 -rotate-90 italic font-sf-mono text-sm text-white hover:cursor-pointer hover:text-primary hover:-translate-y-0.5 transition-all duration-300"
       >
         <span className="underline underline-offset-8">Front End</span>{" "}
         Developer
