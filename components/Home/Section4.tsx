@@ -61,7 +61,7 @@ const Section4 = () => {
         </div>
 
         <motion.div
-          className="flex flex-col gap-20 mt-10"
+          className="flex flex-col gap-20"
           ref={ref as React.LegacyRef<HTMLDivElement>}
           variants={containerVariants}
           initial="hidden"
@@ -72,13 +72,10 @@ const Section4 = () => {
               key={index}
               className={`flex relative rounded-lg ${
                 index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-              } gap-5 bg-[url('/work/${
-                work.imgUrl
-              }')] bg-cover bg-center lg:bg-none`}
+              } gap-5`}
               variants={itemVariants}
             >
-              <div className="lg:hidden absolute inset-0 bg-primary opacity-50 transition-opacity duration-300 ease-in-out group-hover:opacity-0 rounded-lg"></div>
-              <div className="w-1/2 hidden lg:block">
+              <div className="w-1/2">
                 <div className="relative group w-full overflow-hidden rounded-lg">
                   <Image
                     src={`/work/${work.imgUrl}`}
@@ -93,7 +90,7 @@ const Section4 = () => {
               </div>
 
               <div
-                className={`relative z-30 w-full lg:w-1/2 flex flex-col my-auto gap-5 ${
+                className={`w-1/2 flex flex-col my-auto gap-5 ${
                   index % 2 !== 0 ? "" : "text-end"
                 }`}
               >
@@ -123,8 +120,8 @@ const Section4 = () => {
 
               <div
                 className={`absolute bottom-0 ${
-                  index % 2 === 0 ? "right-0" : "left-0"
-                } flex gap-4 text-text-secondary`}
+                  index % 2 === 0 ? "right" : "left"
+                }-0 flex gap-4 text-text-secondary`}
               >
                 <Link
                   href={work.githubUrl}
