@@ -164,6 +164,21 @@ const Navbar = () => {
 
       {/* Bottom bar for mobile screens */}
       <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <LinkElement
+          to="hero"
+          smooth={true}
+          duration={500}
+          className="md:hidden hover:cursor-pointer flex justify-center pt-7"
+        >
+          <Image src="/logo.svg" alt="Logo" width={75} height={40} priority />
+        </LinkElement>
+      </motion.div>
+
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
