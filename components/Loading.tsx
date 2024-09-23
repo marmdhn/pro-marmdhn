@@ -9,7 +9,7 @@ const Loading = ({ isFadingOut }: LoadingProps) => {
     >
       <svg
         id="loading-svg"
-        width="200"
+        width="100"
         height="100"
         viewBox="0 0 264 114"
         fill="none"
