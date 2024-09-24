@@ -13,7 +13,7 @@ import { useEffect } from "react";
 const Section4 = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.25,
   });
 
   useEffect(() => {
