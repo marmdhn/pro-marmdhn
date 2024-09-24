@@ -64,7 +64,7 @@ const ArchivePage = () => {
           >
             <table className="w-full table">
               <thead>
-                <tr className="text-xl">
+                <tr className="text-xl border-none">
                   <th>Year</th>
                   <th>Title</th>
                   <th className="hidden lg:table-cell">Made at</th>
@@ -76,18 +76,16 @@ const ArchivePage = () => {
                 {Archives.map((archive, index) => (
                   <motion.tr
                     key={index}
-                    className="text-xl hover:bg-[#262930FF] transition-colors duration-300"
+                    className="text-lg hover:bg-[#262930FF] transition-colors duration-300 border-none"
                     custom={index}
                     initial="hidden"
                     animate="visible"
                     variants={slideUp}
                   >
-                    <td className="text-primary font-sf-mono text-lg">
+                    <td className="text-primary font-sf-mono">
                       {archive.year}
                     </td>
-                    <td className="font-sf-mono text-lg font-bold">
-                      {archive.title}
-                    </td>
+                    <td className="font-sf-mono font-bold">{archive.title}</td>
                     <td className="hidden lg:table-cell text-secondary font-semibold">
                       {archive.madeAt}
                     </td>
