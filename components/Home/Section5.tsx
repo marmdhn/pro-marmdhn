@@ -55,7 +55,7 @@ const Section5 = () => {
           <motion.span variants={itemVariants} className="text-xl">
             What’s Next?
           </motion.span>
-          <motion.span variants={itemVariants} className="text-6xl">
+          <motion.span variants={itemVariants} className="text-4xl lg:text-6xl">
             Get In Touch
           </motion.span>
         </div>
