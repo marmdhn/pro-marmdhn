@@ -184,7 +184,7 @@ const Navbar = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="fixed w-full bottom-0 bg-[#1B1C21]/90 shadow-lg backdrop-blur-sm md:hidden z-[999] py-2 rounded-xl"
       >
-        <div className="flex justify-around items-center h-[60px] px-5">
+        <div className="flex justify-around items-center h-[60px]">
           <LinkElement
             to="about"
             smooth={true}
