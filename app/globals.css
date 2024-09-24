@@ -89,6 +89,28 @@ body {
   animation: draw 15s ease;
 }
 
+@media (max-width: 640px) {
+  #loading-svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  #loading-svg {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 1025px) {
+  #loading-svg {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+
 @keyframes draw {
   0% {
     stroke-dashoffset: 4500;
