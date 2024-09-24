@@ -3,18 +3,21 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Link as LinkElement } from "react-scroll";
+import { Link as LinkElement, scroller } from "react-scroll";
 import PrimaryButton from "@/components/PrimaryButton";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { FaBriefcase, FaEnvelope, FaLaptopCode, FaUser } from "react-icons/fa6";
 import { FaFileAlt } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
   const [scrollDirection, setScrollDirection] = useState("up");
   const [hasShadow, setHasShadow] = useState(false);
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const pathname = usePathname();
+  const [scrollTarget, setScrollTarget] = useState(null);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -46,6 +49,27 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (scrollTarget) {
+      scroller.scrollTo(scrollTarget, {
+        duration: 500,
+        smooth: true,
+      });
+    }
+  }, [pathname, scrollTarget]);
+
+  const handleNavigation = (to) => {
+    if (pathname === "/archive") {
+      router.push("/");
+      setScrollTarget(to);
+    } else {
+      scroller.scrollTo(to, {
+        duration: 500,
+        smooth: true,
+      });
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -108,50 +132,46 @@ const Navbar = () => {
           </div>
           <motion.div className="col-span-1" variants={containerVariants}>
             <div className="space-x-4 justify-center items-center hidden sm:flex">
-              {pathname !== "/archive" && (
-                <>
-                  <motion.div variants={itemVariants}>
-                    <LinkElement
-                      to="about"
-                      smooth={true}
-                      duration={500}
-                      className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                    >
-                      About
-                    </LinkElement>
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <LinkElement
-                      to="experience"
-                      smooth={true}
-                      duration={500}
-                      className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                    >
-                      Experience
-                    </LinkElement>
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <LinkElement
-                      to="work"
-                      smooth={true}
-                      duration={500}
-                      className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                    >
-                      Work
-                    </LinkElement>
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <LinkElement
-                      to="contact"
-                      smooth={true}
-                      duration={500}
-                      className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
-                    >
-                      Contact
-                    </LinkElement>
-                  </motion.div>
-                </>
-              )}
+              <motion.div variants={itemVariants}>
+                <button
+                  onClick={() => {
+                    handleNavigation("about");
+                  }}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  About
+                </button>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <button
+                  onClick={() => {
+                    handleNavigation("experience");
+                  }}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  Experience
+                </button>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <button
+                  onClick={() => {
+                    handleNavigation("work");
+                  }}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  Work
+                </button>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <button
+                  onClick={() => {
+                    handleNavigation("contact");
+                  }}
+                  className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
+                >
+                  Contact
+                </button>
+              </motion.div>
               <motion.div variants={itemVariants}>
                 <Link href="/">
                   <PrimaryButton btnText="Resume" />
@@ -185,25 +205,25 @@ const Navbar = () => {
         className="fixed w-full bottom-0 bg-[#1B1C21]/90 shadow-lg backdrop-blur-sm md:hidden z-[999] py-2 rounded-xl"
       >
         <div className="flex justify-around items-center h-[60px]">
-          <LinkElement
-            to="about"
-            smooth={true}
-            duration={500}
+          <button
+            onClick={() => {
+              handleNavigation("about");
+            }}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaUser size={20} />
             <span className="text-xs mt-1">About</span>
-          </LinkElement>
+          </button>
 
-          <LinkElement
-            to="experience"
-            smooth={true}
-            duration={500}
+          <button
+            onClick={() => {
+              handleNavigation("experience");
+            }}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaBriefcase size={20} />
             <span className="text-xs mt-1">Experience</span>
-          </LinkElement>
+          </button>
 
           <Link href="/">
             <div className="mb-2">
@@ -211,25 +231,25 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <LinkElement
-            to="work"
-            smooth={true}
-            duration={500}
+          <button
+            onClick={() => {
+              handleNavigation("work");
+            }}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaLaptopCode size={24} />
             <span className="text-xs mt-1">Work</span>
-          </LinkElement>
+          </button>
 
-          <LinkElement
-            to="contact"
-            smooth={true}
-            duration={500}
+          <button
+            onClick={() => {
+              handleNavigation("contact");
+            }}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaEnvelope size={20} />
             <span className="text-xs mt-1">Contact</span>
-          </LinkElement>
+          </button>
         </div>
       </motion.div>
     </>
