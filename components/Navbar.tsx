@@ -202,7 +202,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="fixed w-full bottom-0 bg-[#1B1C21]/90 shadow-lg backdrop-blur-sm md:hidden z-[999] py-2 rounded-xl"
+        className="fixed bottom-4 left-4 right-4 bg-[#1B1C21]/90 shadow-lg shadow-primary/10 backdrop-blur-sm md:hidden z-[999] py-2 rounded-xl"
       >
         <div className="flex justify-around items-center h-[60px]">
           <button
@@ -212,7 +212,6 @@ const Navbar = () => {
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaUser size={20} />
-            <span className="text-xs mt-1">About</span>
           </button>
 
           <button
@@ -222,13 +221,10 @@ const Navbar = () => {
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaBriefcase size={20} />
-            <span className="text-xs mt-1">Experience</span>
           </button>
 
           <Link href="/">
-            <div className="mb-2">
-              <PrimaryButton btnText="" icon={<FaFileAlt size={20} />} />
-            </div>
+            <PrimaryButton btnText="" icon={<FaFileAlt size={20} />} />
           </Link>
 
           <button
@@ -238,7 +234,6 @@ const Navbar = () => {
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaLaptopCode size={24} />
-            <span className="text-xs mt-1">Work</span>
           </button>
 
           <button
@@ -248,7 +243,6 @@ const Navbar = () => {
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
             <FaEnvelope size={20} />
-            <span className="text-xs mt-1">Contact</span>
           </button>
         </div>
       </motion.div>
