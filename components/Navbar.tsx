@@ -13,11 +13,11 @@ import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const router = useRouter();
-  const [scrollDirection, setScrollDirection] = useState("up");
-  const [hasShadow, setHasShadow] = useState(false);
-  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [scrollDirection, setScrollDirection] = useState<string>("up");
+  const [hasShadow, setHasShadow] = useState<boolean>(false);
+  const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
   const pathname = usePathname();
-  const [scrollTarget, setScrollTarget] = useState(null);
+  const [scrollTarget, setScrollTarget] = useState<string>(null);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -59,7 +59,7 @@ const Navbar = () => {
     }
   }, [pathname, scrollTarget]);
 
-  const handleNavigation = (to) => {
+  const handleNavigation = (to: string) => {
     if (pathname === "/archive") {
       router.push("/");
       setScrollTarget(to);
