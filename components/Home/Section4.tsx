@@ -50,14 +50,14 @@ const Section4 = () => {
       className="section flex flex-col justify-center items-center relative w-full py-20"
     >
       <div className="flex flex-col max-w-7xl">
-        <div className="flex items-center gap-0 lg:gap-10">
+        <div className="flex items-center gap-0 lg:gap-10 mb-10">
           <h2 className="text-2xl lg:text-3xl inline-block font-sf-mono mb-0">
             Some Things I’ve{" "}
             <span className="text-primary underline underline-offset-4 lg:no-underline">
               Built
             </span>
           </h2>
-          <div className="hidden lg:block h-[1px] w-[200px] lg:w-[300px] bg-secondary"></div>
+          <div className="hidden lg:block h-[1px] w-[200px] lg:w-1/3 bg-secondary"></div>
         </div>
 
         <motion.div
@@ -70,12 +70,13 @@ const Section4 = () => {
           {Works.map((work, index) => (
             <motion.div
               key={index}
-              className={`flex relative rounded-lg ${
-                index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-              } gap-5`}
+              className={`flex flex-col lg:flex-row relative rounded-lg gap-5 ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              }`}
               variants={itemVariants}
             >
-              <div className="w-1/2">
+              {/* Image at the top for mobile, beside text for large screens */}
+              <div className="w-full lg:w-1/2">
                 <div className="relative group w-full overflow-hidden rounded-lg">
                   <Image
                     src={`/work/${work.imgUrl}`}
@@ -89,9 +90,10 @@ const Section4 = () => {
                 </div>
               </div>
 
+              {/* Text below image for mobile, beside image for large screens */}
               <div
-                className={`w-1/2 flex flex-col my-auto gap-5 ${
-                  index % 2 !== 0 ? "" : "text-end"
+                className={`w-full lg:w-1/2 flex flex-col my-auto gap-5 ${
+                  index % 2 !== 0 ? "" : "lg:text-end lg:items-end"
                 }`}
               >
                 <div>
@@ -108,7 +110,7 @@ const Section4 = () => {
 
                   <div
                     className={`flex gap-4 text-secondary ${
-                      index % 2 !== 0 ? "" : "ms-auto"
+                      index % 2 !== 0 ? "" : "lg:ms-auto"
                     }`}
                   >
                     {work.techStack.map((techStack, index) => (
@@ -116,35 +118,31 @@ const Section4 = () => {
                     ))}
                   </div>
                 </div>
-              </div>
 
-              <div
-                className={`absolute bottom-0 ${
-                  index % 2 === 0 ? "right" : "left"
-                }-0 flex gap-4 text-text-secondary`}
-              >
-                <Link
-                  href={work.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary hover:scale-110 transition-all duration-300"
-                >
-                  <FaGithub size={24} />
-                </Link>
-                <Link
-                  href={work.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary hover:scale-110 transition-all duration-300"
-                >
-                  <FaExternalLinkAlt size={24} />
-                </Link>
+                <div className={`flex gap-4 text-text-secondary`}>
+                  <Link
+                    href={work.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary hover:scale-110 transition-all duration-300"
+                  >
+                    <FaGithub size={24} />
+                  </Link>
+                  <Link
+                    href={work.websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary hover:scale-110 transition-all duration-300"
+                  >
+                    <FaExternalLinkAlt size={24} />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
-      <Link href={"/archive"} className="mt-32">
+      <Link href={"/archive"} className="mt-16 lg:mt-32">
         <PrimaryButton btnText={"View More"} />
       </Link>
     </section>

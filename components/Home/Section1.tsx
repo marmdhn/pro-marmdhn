@@ -17,7 +17,7 @@ const Section1 = () => {
           MARMDHN
         </div>
 
-        <div className="font-adelia text-lg md:text-3xl lg:text-4xl text-secondary">
+        <div className="font-adelia text-md md:text-3xl lg:text-4xl text-secondary">
           Muhammad Akbar Ramadhan
         </div>
       </div>
