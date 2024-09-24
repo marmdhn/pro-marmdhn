@@ -39,7 +39,7 @@ const ArchivePage = () => {
             animate="visible"
           >
             <motion.span
-              className="text-7xl font-bold"
+              className="text-5xl lg:text-7xl font-bold"
               variants={fadeIn}
               initial="hidden"
               animate="visible"
@@ -67,8 +67,8 @@ const ArchivePage = () => {
                 <tr className="text-xl">
                   <th>Year</th>
                   <th>Title</th>
-                  <th>Made at</th>
-                  <th>Build With</th>
+                  <th className="hidden lg:table-cell">Made at</th>
+                  <th className="hidden lg:table-cell">Build With</th>
                   <th>Link</th>
                 </tr>
               </thead>
@@ -85,11 +85,13 @@ const ArchivePage = () => {
                     <td className="text-primary font-sf-mono text-lg">
                       {archive.year}
                     </td>
-                    <td className="font-bold">{archive.title}</td>
-                    <td className="text-secondary font-semibold">
+                    <td className="font-sf-mono text-lg font-bold">
+                      {archive.title}
+                    </td>
+                    <td className="hidden lg:table-cell text-secondary font-semibold">
                       {archive.madeAt}
                     </td>
-                    <td className="text-lg text-secondary font-semibold">
+                    <td className=" hidden lg:table-cell text-lg text-secondary font-semibold">
                       {archive.buildWith.join(" • ")}
                     </td>
                     <td>
@@ -101,7 +103,7 @@ const ArchivePage = () => {
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
                           >
-                            <FaExternalLinkAlt size={20} />
+                            <FaExternalLinkAlt size={24} />
                           </Link>
                         )}
                         {archive.link.gitHubUrl && (
@@ -111,7 +113,7 @@ const ArchivePage = () => {
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
                           >
-                            <FaGithub size={20} />
+                            <FaGithub size={24} />
                           </Link>
                         )}
                       </div>
