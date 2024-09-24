@@ -59,7 +59,10 @@ const Section5 = () => {
             Get In Touch
           </motion.span>
         </div>
-        <motion.span variants={itemVariants} className="text-secondary mb-12">
+        <motion.span
+          variants={itemVariants}
+          className="text-secondary mb-12 lg:text-lg"
+        >
           I’m{" "}
           <span className="text-primary underline underline-offset-4">
             currently actively
