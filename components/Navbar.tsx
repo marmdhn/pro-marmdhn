@@ -53,7 +53,7 @@ const Navbar = () => {
   useEffect(() => {
     if (scrollTarget) {
       scroller.scrollTo(scrollTarget, {
-        duration: 500,
+        duration: 750,
         smooth: true,
       });
     }
@@ -65,7 +65,7 @@ const Navbar = () => {
       setScrollTarget(to);
     } else {
       scroller.scrollTo(to, {
-        duration: 500,
+        duration: 750,
         smooth: true,
       });
     }
