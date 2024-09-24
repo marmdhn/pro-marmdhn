@@ -17,7 +17,7 @@ const Navbar = () => {
   const [hasShadow, setHasShadow] = useState<boolean>(false);
   const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
   const pathname = usePathname();
-  const [scrollTarget, setScrollTarget] = useState<string>(null);
+  const [scrollTarget, setScrollTarget] = useState<string | null>(null);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
