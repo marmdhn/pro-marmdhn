@@ -4,8 +4,9 @@ export interface IArchive {
   title: string;
   madeAt: string;
   buildWith: string[];
-  detail: boolean;
   link: { gitHubUrl: string; webUrl: string };
+  detail: boolean;
+  imageCover?: string;
 }
 
 export const Archives: IArchive[] = [
@@ -48,6 +49,19 @@ export const Archives: IArchive[] = [
   {
     id: 4,
     year: 2023,
+    title: "Halo YPT",
+    madeAt: "Telkom Foundation",
+    buildWith: ["HTML", "CSS", "JS", "Bootstrap"],
+    link: {
+      gitHubUrl: "",
+      webUrl: "",
+    },
+    detail: true,
+    imageCover: "halo-ypt/image-cover.png",
+  },
+  {
+    id: 5,
+    year: 2023,
     title: "Dashboard Monitoring Server",
     madeAt: "PT Akhdani Reka Solusi",
     buildWith: ["Nuxt.Js", "Vue.Js", "TailwindCss"],
@@ -56,5 +70,6 @@ export const Archives: IArchive[] = [
       webUrl: "",
     },
     detail: true,
+    imageCover: "dashboard-monitoring-server/image-cover.png",
   },
 ];
