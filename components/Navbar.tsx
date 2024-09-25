@@ -93,7 +93,7 @@ const Navbar = () => {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className={`px-[50px] transition-all duration-300 sticky top-0 z-50 overflow-hidden hidden md:block ${
+        className={`px-[50px] transition-all duration-400 sticky top-0 z-50 overflow-hidden hidden md:block ${
           !isFirstLoad && scrollDirection === "down"
             ? "-translate-y-full"
             : "translate-y-0"
