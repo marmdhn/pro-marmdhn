@@ -39,15 +39,15 @@ const DetailArchive = ({ params }: { params: { archiveId: string } }) => {
   return (
     <div className="section flex flex-col justify-center items-center pt-4 pb-16">
       <motion.div
-        className="w-full flex justify-center items-center gap-10"
+        className="w-full flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-10"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-center lg:items-start">
           <div className="flex items-center gap-5">
             <motion.h2
-              className="text-2xl font-bold"
+              className="text-3xl font-bold"
               variants={containerVariants}
             >
               {detailData?.title}
@@ -60,12 +60,12 @@ const DetailArchive = ({ params }: { params: { archiveId: string } }) => {
         </div>
 
         <motion.div
-          className="w-[50%] relative flex justify-center mt-10 lg:mt-0"
+          className="w-full lg:w-[50%] relative flex justify-center lg:mt-0"
           variants={imageVariants}
         >
           <Image
-            className="w-full h-auto object-cover"
-            src="/archive/dashboard-monitoring-server/image1.png"
+            className="w-full h-auto object-cover hover:scale-105 duration-500 transition-all ease-in-out"
+            src={`/archive/${detailData?.imageCover}`}
             alt="Profile Image"
             width={100}
             height={100}
