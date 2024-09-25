@@ -120,22 +120,26 @@ const Section4 = () => {
                 </div>
 
                 <div className={`flex gap-4 text-text-secondary`}>
-                  <Link
-                    href={work.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary hover:scale-110 transition-all duration-300"
-                  >
-                    <FaGithub size={24} />
-                  </Link>
-                  <Link
-                    href={work.websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary hover:scale-110 transition-all duration-300"
-                  >
-                    <FaExternalLinkAlt size={24} />
-                  </Link>
+                  {work.githubUrl && (
+                    <Link
+                      href={work.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary hover:scale-110 transition-all duration-300"
+                    >
+                      <FaGithub size={24} />
+                    </Link>
+                  )}
+                  {work.websiteUrl && (
+                    <Link
+                      href={work.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary hover:scale-110 transition-all duration-300"
+                    >
+                      <FaExternalLinkAlt size={24} />
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>
