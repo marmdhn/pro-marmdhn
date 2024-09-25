@@ -77,7 +77,7 @@ const Section3 = () => {
         initial="hidden"
         animate={controls}
       >
-        <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+        <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical gap-2 lg:gap-0">
           {Experiences.map((experience, index) => {
             const isLeft = index % 2 === 0;
 
@@ -103,18 +103,20 @@ const Section3 = () => {
                   } mt-1.5`}
                 >
                   <div
-                    className={`text-start md:text-${isLeft ? "end" : "start"}`}
+                    className={`w-full flex flex-col items-start ${
+                      isLeft ? "md:items-end" : "md:items-start"
+                    }`}
                   >
                     <time className="font-mono italic">{experience.year}</time>
-                    <div className="text-xl font-bold">
+                    <div className="text-xl font-bold mb-1">
                       {experience.title}{" "}
                       <span className="text-primary">
                         @{experience.corporate}
                       </span>
                     </div>
-                  </div>
-                  <div className="text-justify text-base text-text-secondary">
-                    {experience.description}
+                    <div className="text-justify text-base text-text-secondary">
+                      {experience.description}
+                    </div>
                   </div>
                 </div>
                 <motion.hr className="bg-white" variants={hrVariants} />
