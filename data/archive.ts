@@ -1,9 +1,10 @@
-interface IArchive {
+export interface IArchive {
   id: number;
   year: number;
   title: string;
   madeAt: string;
   buildWith: string[];
+  detail: boolean;
   link: { gitHubUrl: string; webUrl: string };
 }
 
@@ -18,6 +19,7 @@ export const Archives: IArchive[] = [
       gitHubUrl: "",
       webUrl: "https://digits.telkomschools.sch.id/",
     },
+    detail: false,
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ export const Archives: IArchive[] = [
       gitHubUrl: "",
       webUrl: "https://digits.telkomschools.sch.id/",
     },
+    detail: false,
   },
   {
     id: 3,
@@ -40,5 +43,18 @@ export const Archives: IArchive[] = [
       gitHubUrl: "",
       webUrl: "https://ppdb.telkomschools.sch.id/",
     },
+    detail: false,
+  },
+  {
+    id: 4,
+    year: 2023,
+    title: "Dashboard Monitoring Server",
+    madeAt: "PT Akhdani Reka Solusi",
+    buildWith: ["Nuxt.Js", "Vue.Js", "TailwindCss"],
+    link: {
+      gitHubUrl: "",
+      webUrl: "",
+    },
+    detail: true,
   },
 ];
