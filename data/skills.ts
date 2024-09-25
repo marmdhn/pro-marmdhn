@@ -6,4 +6,5 @@ export const skills = [
   "Next.js",
   "Tailwind CSS",
   "Bootstrap",
+  "Figma",
 ];
