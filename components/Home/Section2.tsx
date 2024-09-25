@@ -88,6 +88,12 @@ const Section2 = () => {
                 to deliver high-quality software solutions.
               </motion.span>
               <motion.span variants={item}>
+                In addition to front-end development, I have a strong interest
+                in UI/UX design, and I regularly use Figma to design
+                user-friendly interfaces. I also have a portfolio showcasing my
+                work in both web development and UI/UX design.
+              </motion.span>
+              <motion.span variants={item}>
                 Currently, I focus on creating responsive, high-performance web
                 applications using modern technologies such as React.js, Vue.js,
                 and Tailwind CSS, while ensuring a seamless user experience.
@@ -111,7 +117,7 @@ const Section2 = () => {
 
           {/* Image Section */}
           <motion.div
-            className="lg:w-1/3 flex justify-center mt-10 lg:mt-0 ms-4 xl:ms-0"
+            className="lg:w-[40%] flex justify-center mt-10 lg:mt-0 ms-4 xl:ms-0"
             variants={item}
           >
             <Image
