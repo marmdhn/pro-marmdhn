@@ -86,11 +86,11 @@ const ArchivePage = () => {
                       {archive.year}
                     </td>
                     <td className="font-sf-mono font-bold">{archive.title}</td>
-                    <td className="hidden lg:table-cell text-secondary font-semibold">
+                    <td className="hidden lg:table-cell text-secondary font-semibold pt-4">
                       {archive.madeAt}
                     </td>
-                    <td className=" hidden lg:table-cell text-lg text-secondary font-semibold">
-                      {archive.buildWith.join(" • ")}
+                    <td className=" hidden lg:table-cell text-lg text-secondary font-semibold pt-4">
+                      {archive.buildWith.join(", ")}
                     </td>
                     <td>
                       <div className="flex gap-4 text-secondary">
