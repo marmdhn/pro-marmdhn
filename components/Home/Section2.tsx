@@ -41,15 +41,15 @@ const Section2 = () => {
       className="section flex justify-center items-center py-10 lg:py-20"
       ref={ref as React.LegacyRef<HTMLElement>}
     >
-      <div className="max-w-7xl text-white px-0 lg:px-16">
+      <div className="max-w-7xl text-white px-0 xl:px-16">
         <motion.div
-          className="flex flex-col lg:flex-row items-center"
+          className="flex flex-col xl:flex-row items-center"
           initial="hidden"
           animate={controls}
           variants={container}
         >
           {/* Text Section */}
-          <div className="lg:w-2/3 flex flex-col gap-5 text-base lg:text-lg">
+          <div className="xl:w-2/3 flex flex-col gap-5 text-base lg:text-lg">
             <div className="w-full flex items-center gap-5 lg:gap-10 mb-10">
               <motion.h2
                 className="text-2xl lg:text-3xl font-sf-mono mb-0"
@@ -67,7 +67,7 @@ const Section2 = () => {
             </div>
 
             <motion.div
-              className="flex flex-col gap-3 lg:gap-5"
+              className="flex flex-col gap-3 lg:gap-5 text-justify"
               variants={item}
             >
               <motion.span variants={item}>
@@ -117,19 +117,91 @@ const Section2 = () => {
 
           {/* Image Section */}
           <motion.div
-            className="lg:w-[40%] flex justify-center mt-10 lg:mt-0 ms-4 xl:ms-0"
             variants={item}
+            className="relative xl:w-1/3 flex justify-center items-center"
           >
-            <Image
-              className="w-1/2 object-cover h-auto"
-              src="/image.png"
-              alt="Profile Image"
-              width={100}
-              height={100}
-              draggable="false"
-              onContextMenu={(e) => e.preventDefault()}
-              unoptimized
+            {/* Bola 1 */}
+            <motion.div
+              className="absolute top-1/4 left-1/4 w-24 h-24 bg-blue-500 rounded-full opacity-70 blur-xl"
+              animate={{
+                x: [0, 30, -30, 0],
+                y: [0, 60, -30, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
+
+            {/* Bola 2 */}
+            <motion.div
+              className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-pink-500 rounded-full opacity-70 blur-xl"
+              animate={{
+                x: [0, -40, 40, 0],
+                y: [0, -20, 40, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Bola 3 */}
+            <motion.div
+              className="absolute top-1/3 left-1/2 w-16 h-16 bg-green-500 rounded-full opacity-70 blur-xl"
+              animate={{
+                x: [0, 50, -50, 0],
+                y: [0, 80, -50, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Bola 4 */}
+            <motion.div
+              className="absolute top-1/5 right-1/5 w-20 h-20 bg-yellow-500 rounded-full opacity-70 blur-xl"
+              animate={{
+                x: [0, -60, 60, 0],
+                y: [0, -40, 60, 0],
+              }}
+              transition={{
+                duration: 7,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Bola 5 */}
+            <motion.div
+              className="absolute bottom-1/3 left-1/3 w-28 h-28 bg-purple-500 rounded-full opacity-70 blur-xl"
+              animate={{
+                x: [0, 70, -70, 0],
+                y: [0, 30, -70, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            <div className="relative flex justify-center mt-10 lg:mt-0">
+              <Image
+                className="w-full md:w-1/2 xl:w-full object-cover h-auto"
+                src="/image.png"
+                alt="Profile Image"
+                width={100}
+                height={100}
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
+                unoptimized
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>
