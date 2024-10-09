@@ -223,7 +223,10 @@ const Navbar = () => {
             <FaBriefcase size={20} />
           </button>
 
-          <Link href="/cv">
+          <Link
+            target="_blank"
+            href="https://drive.google.com/file/d/1OjnfGWxvCGDqX_YPVHFyxs_nzNRSITQM/view?usp=drive_link"
+          >
             <PrimaryButton btnText="" icon={<FaFileAlt size={20} />} />
           </Link>
 
