@@ -60,7 +60,7 @@ const Navbar = () => {
   }, [pathname, scrollTarget]);
 
   const handleNavigation = (to: string) => {
-    if (pathname === "/archive") {
+    if (pathname !== "/") {
       router.push("/");
       setScrollTarget(to);
     } else {
@@ -103,7 +103,7 @@ const Navbar = () => {
       >
         <div className="h-[25px] my-[25px] relative flex items-center justify-between">
           <div className="col-span-1 me-auto">
-            {pathname !== "/archive" ? (
+            {pathname === "/" ? (
               <LinkElement
                 to="hero"
                 smooth={true}
@@ -173,7 +173,7 @@ const Navbar = () => {
                 </button>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <Link href="/">
+                <Link href="/cv">
                   <PrimaryButton btnText="Resume" />
                 </Link>
               </motion.div>
@@ -223,7 +223,7 @@ const Navbar = () => {
             <FaBriefcase size={20} />
           </button>
 
-          <Link href="/">
+          <Link href="/cv">
             <PrimaryButton btnText="" icon={<FaFileAlt size={20} />} />
           </Link>
 
