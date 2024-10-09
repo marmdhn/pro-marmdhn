@@ -19,7 +19,7 @@ const PreviewCv = () => {
         </div>
       )}
       <iframe
-        src="/CV_Muhammad%20Akbar%20Ramadhan.pdf"
+        src="/CV_Muhammad-Akbar-Ramadhan.pdf"
         className={`transition-opacity duration-500 w-full h-full ${
           loading ? "opacity-0" : "opacity-100"
         }`}
