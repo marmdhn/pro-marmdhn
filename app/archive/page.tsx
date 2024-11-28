@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaGithub, FaRegEye } from "react-icons/fa6";
+import { FaDownload, FaGithub, FaRegEye } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import StickyElement from "@/components/Home/StickyElement";
@@ -106,7 +106,7 @@ const ArchivePage = () => {
                         )}
                         {archive.link.gitHubUrl && (
                           <Link
-                            href=""
+                            href={archive.link.webUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
@@ -121,6 +121,15 @@ const ArchivePage = () => {
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
                           >
                             <FaRegEye size={24} />
+                          </Link>
+                        )}
+                        {archive.link.downloadUrl && (
+                          <Link
+                            href={`${archive.link.downloadUrl}`}
+                            rel="noopener noreferrer"
+                            className="hover:text-primary hover:scale-110 transition-all duration-300"
+                          >
+                            <FaDownload size={24} />
                           </Link>
                         )}
                       </div>
