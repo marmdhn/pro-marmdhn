@@ -106,7 +106,7 @@ const ArchivePage = () => {
                         )}
                         {archive.link.gitHubUrl && (
                           <Link
-                            href={archive.link.webUrl}
+                            href={archive.link.gitHubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
@@ -126,6 +126,7 @@ const ArchivePage = () => {
                         {archive.link.downloadUrl && (
                           <Link
                             href={`${archive.link.downloadUrl}`}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
                           >
