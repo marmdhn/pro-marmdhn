@@ -4,9 +4,9 @@ export interface IArchive {
   title: string;
   madeAt: string;
   buildWith: string[];
-  link: { gitHubUrl: string; webUrl: string };
+  link: { gitHubUrl: string; webUrl: string; downloadUrl?: string };
   detail: boolean;
-  imageCover?: string;
+  imageCover?: { fileUrl: string; width: number };
 }
 
 export const Archives: IArchive[] = [
@@ -18,7 +18,7 @@ export const Archives: IArchive[] = [
     buildWith: ["Nuxt.Js", "Vue.Js", "CSS", "Bootstrap"],
     link: {
       gitHubUrl: "",
-      webUrl: "https://digits.telkomschools.sch.id/",
+      webUrl: "",
     },
     detail: false,
   },
@@ -30,7 +30,7 @@ export const Archives: IArchive[] = [
     buildWith: ["Nuxt.Js", "Vue.Js", "Bootstrap"],
     link: {
       gitHubUrl: "",
-      webUrl: "https://digits.telkomschools.sch.id/",
+      webUrl: "https://baituladab.com/",
     },
     detail: false,
   },
@@ -57,7 +57,7 @@ export const Archives: IArchive[] = [
       webUrl: "",
     },
     detail: true,
-    imageCover: "halo-ypt/image-cover.png",
+    imageCover: { fileUrl: "halo-ypt/image-cover.png", width: 50 },
   },
   {
     id: 5,
@@ -70,6 +70,24 @@ export const Archives: IArchive[] = [
       webUrl: "",
     },
     detail: true,
-    imageCover: "dashboard-monitoring-server/image-cover.png",
+    imageCover: {
+      fileUrl: "dashboard-monitoring-server/image-cover.png",
+      width: 50,
+    },
+  },
+  {
+    id: 6,
+    year: 2023,
+    title: "MAR Quran App",
+    madeAt: "Personal Project",
+    buildWith: ["Flutter", "Dart"],
+    link: {
+      gitHubUrl: "https://github.com/marmdhn/mar-quran-app",
+      webUrl: "",
+      downloadUrl:
+        "https://drive.google.com/file/d/1Dwc0zNCEe3rV5m9_r6JVX-LXHD48a1_F/view",
+    },
+    detail: true,
+    imageCover: { fileUrl: "mar-quran/image-cover.png", width: 25 },
   },
 ];

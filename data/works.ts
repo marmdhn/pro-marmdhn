@@ -24,7 +24,7 @@ export const Works: IWorks[] = [
       "The DigiTS platform simplifies the re-registration process for students, while also providing comprehensive management tools for schools, covering everything from student and teacher data to academic, curriculum, and department management.",
     techStack: ["Nuxt.Js", "Vue.Js", "CSS", "Bootstrap"],
     githubUrl: "",
-    websiteUrl: "https://digits.telkomschools.sch.id/",
+    websiteUrl: "",
   },
   {
     imgUrl: "baitul-adab-islamic-school.png",
