@@ -60,12 +60,12 @@ const DetailArchive = ({ params }: { params: { archiveId: string } }) => {
         </div>
 
         <motion.div
-          className="w-full lg:w-[50%] relative flex justify-center lg:mt-0"
+          className={`w-full lg:w-[${detailData?.imageCover?.width}%] relative flex justify-center lg:mt-0`}
           variants={imageVariants}
         >
           <Image
             className="w-full h-auto object-cover hover:scale-105 duration-500 transition-all ease-in-out"
-            src={`/archive/${detailData?.imageCover}`}
+            src={`/archive/${detailData?.imageCover?.fileUrl}`}
             alt="Profile Image"
             width={100}
             height={100}
