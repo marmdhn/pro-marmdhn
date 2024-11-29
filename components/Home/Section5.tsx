@@ -4,6 +4,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import Link from "next/link";
 
 const Section5 = () => {
   const controls = useAnimation();
@@ -75,7 +76,9 @@ const Section5 = () => {
           to reach out—I’d be happy to hear from you!
         </motion.span>
         <motion.div variants={itemVariants}>
-          <PrimaryButton btnText={"Say Hi :D"} />
+          <Link href="mailto:makbarramadhan62@gmail.com">
+            <PrimaryButton btnText={"Say Hi :D"} />
+          </Link>
         </motion.div>
       </motion.div>
     </section>
