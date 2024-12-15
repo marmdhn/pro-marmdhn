@@ -23,7 +23,7 @@ const slideUp = {
 
 const ArchivePage = () => {
   return (
-    <div className="min-h-screen px-8 xl:px-0 mx-auto h-full">
+    <div className="min-h-screen px-8 xl:px-0 mx-auto h-full lg:mb-0 mb-16">
       <StickyElement />
       <motion.section
         className="flex flex-col justify-center items-center relative w-full pt-[100px]"
