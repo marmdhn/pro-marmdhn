@@ -192,7 +192,7 @@ const Section2 = () => {
 
             <div className="relative flex justify-center mt-10 lg:mt-0">
               <Image
-                className="w-full md:w-1/2 xl:w-full object-cover h-auto"
+                className="w-full md:w-1/2 xl:w-[90%] object-cover h-auto rounded-lg shadow-lg shadow-gray-500"
                 src="/image.png"
                 alt="Profile Image"
                 width={100}
