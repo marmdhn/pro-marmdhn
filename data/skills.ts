@@ -4,6 +4,7 @@ export const skills = [
   "React",
   "Vue",
   "Next.js",
+  "Nuxt.js",
   ".NET (Blazor)",
   "Tailwind CSS",
   "Bootstrap",
