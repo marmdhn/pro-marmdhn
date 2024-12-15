@@ -6,7 +6,8 @@ export interface IArchive {
   buildWith: string[];
   link: { gitHubUrl: string; webUrl: string; downloadUrl?: string };
   detail: boolean;
-  imageCover?: { fileUrl: string; width: number };
+  imageCover?: { fileUrl: string };
+  detailPhoto?: string[];
 }
 
 export const Archives: IArchive[] = [
@@ -57,7 +58,7 @@ export const Archives: IArchive[] = [
       webUrl: "",
     },
     detail: true,
-    imageCover: { fileUrl: "halo-ypt/image-cover.png", width: 50 },
+    imageCover: { fileUrl: "halo-ypt/image-cover.png" },
   },
   {
     id: 5,
@@ -72,7 +73,6 @@ export const Archives: IArchive[] = [
     detail: true,
     imageCover: {
       fileUrl: "dashboard-monitoring-server/image-cover.png",
-      width: 50,
     },
   },
   {
@@ -88,6 +88,30 @@ export const Archives: IArchive[] = [
         "https://drive.google.com/file/d/1Dwc0zNCEe3rV5m9_r6JVX-LXHD48a1_F/view",
     },
     detail: true,
-    imageCover: { fileUrl: "mar-quran/image-cover.png", width: 25 },
+    imageCover: { fileUrl: "mar-quran/image-cover.png" },
+  },
+  {
+    id: 7,
+    year: 2023,
+    title: "ATM Athaloka",
+    madeAt: "Personal Project",
+    buildWith: ["Flutter", "Dart"],
+    link: {
+      gitHubUrl: "https://github.com/marmdhn/ATM-Athaloka",
+      webUrl: "",
+    },
+    detail: true,
+    imageCover: { fileUrl: "atm-athaloka/image-cover.png" },
+    detailPhoto: [
+      "atm-athaloka/image-admin-1.png",
+      "atm-athaloka/image-admin-2.png",
+      "atm-athaloka/image-admin-3.png",
+      "atm-athaloka/image-admin-4.png",
+      "atm-athaloka/image-user-1.png",
+      "atm-athaloka/image-user-2.png",
+      "atm-athaloka/image-user-3.png",
+      "atm-athaloka/image-user-4.png",
+      "atm-athaloka/image-user-5.png",
+    ],
   },
 ];
