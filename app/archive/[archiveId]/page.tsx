@@ -79,7 +79,7 @@ const DetailArchive = ({ params }: { params: { archiveId: string } }) => {
       </motion.div>
 
       <div className="mt-16">
-        {detailData?.detailPhoto?.length > 0 && (
+        {detailData?.detailPhoto && (
           <div className="flex flex-col items-center">
             <motion.h2
               className="text-3xl font-bold mb-8"
