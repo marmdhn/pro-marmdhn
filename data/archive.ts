@@ -28,7 +28,7 @@ export const Archives: IArchive[] = [
     year: 2024,
     title: "School Profile Website",
     madeAt: "Baitul Adab Islamic School",
-    buildWith: ["Nuxt.Js", "Vue.Js", "Bootstrap"],
+    buildWith: ["React.Js", "TailwindCss", "DaisyUi"],
     link: {
       gitHubUrl: "",
       webUrl: "https://baituladab.com/",
