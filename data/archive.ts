@@ -97,7 +97,7 @@ export const Archives: IArchive[] = [
     madeAt: "Personal Project",
     buildWith: ["Flutter", "Dart"],
     link: {
-      gitHubUrl: "https://github.com/marmdhn/ATM-Athaloka",
+      gitHubUrl: "https://github.com/marmdhn/atm-athaloka",
       webUrl: "",
     },
     detail: true,
