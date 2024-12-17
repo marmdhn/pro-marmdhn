@@ -95,7 +95,7 @@ export const Archives: IArchive[] = [
     year: 2023,
     title: "ATM Athaloka",
     madeAt: "Personal Project",
-    buildWith: ["Flutter", "Dart"],
+    buildWith: [".Net", "Blazor", "PostgreSQL"],
     link: {
       gitHubUrl: "https://github.com/marmdhn/atm-athaloka",
       webUrl: "",
