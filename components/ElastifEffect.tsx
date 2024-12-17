@@ -19,7 +19,7 @@ export default function ElasticEffect() {
       stiffness: 150,
       damping: 12,
     });
-  }, []);
+  }, [y]);
 
   const handleDragEnd = () => {
     animate(y, 150, {
