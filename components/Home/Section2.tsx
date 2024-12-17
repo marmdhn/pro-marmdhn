@@ -1,15 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { skills } from "@/data/skills";
 import { BsTriangleFill } from "react-icons/bs";
-// import Image from "next/image";
-import ElasticEffect from "@/components/ElastifEffect";
+import Image from "next/image";
 
 const Section2 = () => {
-  // const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.25,
@@ -117,51 +116,50 @@ const Section2 = () => {
             </motion.div>
           </div>
           <motion.div
+            variants={item}
             className="ms-0 xl:ms-8 relative w-full md:w-1/2 xl:w-1/3 aspect-[241/374]"
-            // onMouseEnter={() => setIsFlipped(true)}
-            // onMouseLeave={() => setIsFlipped(false)}
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
           >
-            <ElasticEffect />
+            <div className="relative w-full h-full perspective">
+              <div
+                className={`relative w-full h-full transition-transform duration-700 ${
+                  isFlipped ? "rotate-y-180" : ""
+                }`}
+                style={{
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="absolute w-full h-full backface-hidden">
+                  <Image
+                    src="/image.png"
+                    alt="Front Image"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg shadow-lg"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                </div>
 
-            {/*<div className="relative w-full h-full perspective">*/}
-            {/*  <div*/}
-            {/*    className={`relative w-full h-full transition-transform duration-700 ${*/}
-            {/*      isFlipped ? "rotate-y-180" : ""*/}
-            {/*    }`}*/}
-            {/*    style={{*/}
-            {/*      transformStyle: "preserve-3d",*/}
-            {/*    }}*/}
-            {/*  >*/}
-            {/*    <div className="absolute w-full h-full backface-hidden">*/}
-            {/*      <Image*/}
-            {/*        src="/image.png"*/}
-            {/*        alt="Front Image"*/}
-            {/*        layout="fill"*/}
-            {/*        objectFit="cover"*/}
-            {/*        className="rounded-lg shadow-lg"*/}
-            {/*        draggable="false"*/}
-            {/*        onContextMenu={(e) => e.preventDefault()}*/}
-            {/*      />*/}
-            {/*    </div>*/}
-
-            {/*    <div*/}
-            {/*      className="absolute w-full h-full rotate-y-180 backface-hidden"*/}
-            {/*      style={{*/}
-            {/*        transform: "rotateY(180deg)",*/}
-            {/*      }}*/}
-            {/*    >*/}
-            {/*      <Image*/}
-            {/*        src="/image-back.png"*/}
-            {/*        alt="Back Image"*/}
-            {/*        layout="fill"*/}
-            {/*        objectFit="cover"*/}
-            {/*        className="rounded-lg shadow-lg"*/}
-            {/*        draggable="false"*/}
-            {/*        onContextMenu={(e) => e.preventDefault()}*/}
-            {/*      />*/}
-            {/*    </div>*/}
-            {/*  </div>*/}
-            {/*</div>*/}
+                <div
+                  className="absolute w-full h-full rotate-y-180 backface-hidden"
+                  style={{
+                    transform: "rotateY(180deg)",
+                  }}
+                >
+                  <Image
+                    src="/image-back.png"
+                    alt="Back Image"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg shadow-lg"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                </div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </div>
