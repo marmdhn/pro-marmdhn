@@ -1,15 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { skills } from "@/data/skills";
 import { BsTriangleFill } from "react-icons/bs";
-import Image from "next/image";
+// import Image from "next/image";
 import ElasticEffect from "@/components/ElastifEffect";
 
 const Section2 = () => {
-  const [isFlipped, setIsFlipped] = useState(false);
+  // const [isFlipped, setIsFlipped] = useState(false);
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.25,
@@ -118,8 +118,8 @@ const Section2 = () => {
           </div>
           <motion.div
             className="ms-0 xl:ms-8 relative w-full md:w-1/2 xl:w-1/3 aspect-[241/374]"
-            onMouseEnter={() => setIsFlipped(true)}
-            onMouseLeave={() => setIsFlipped(false)}
+            // onMouseEnter={() => setIsFlipped(true)}
+            // onMouseLeave={() => setIsFlipped(false)}
           >
             <ElasticEffect />
 
