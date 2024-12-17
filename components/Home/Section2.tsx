@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { skills } from "@/data/skills";
@@ -8,6 +8,7 @@ import { BsTriangleFill } from "react-icons/bs";
 import Image from "next/image";
 
 const Section2 = () => {
+  const [isFlipped, setIsFlipped] = useState(false);
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.25,
@@ -118,89 +119,48 @@ const Section2 = () => {
           {/* Image Section */}
           <motion.div
             variants={item}
-            className="relative xl:w-1/3 flex justify-center items-center"
+            className="ms-0 xl:ms-8 relative w-full md:w-1/2 xl:w-1/3 aspect-[241/374]"
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
           >
-            {/* Bola 1 */}
-            <motion.div
-              className="absolute top-1/4 left-1/4 w-24 h-24 bg-blue-500 rounded-full opacity-70 blur-xl"
-              animate={{
-                x: [0, 30, -30, 0],
-                y: [0, 60, -30, 0],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
+            <div className="relative w-full h-full perspective">
+              <div
+                className={`relative w-full h-full transition-transform duration-700 ${
+                  isFlipped ? "rotate-y-180" : ""
+                }`}
+                style={{
+                  transformStyle: "preserve-3d",
+                }}
+              >
+                <div className="absolute w-full h-full backface-hidden">
+                  <Image
+                    src="/image-front.png"
+                    alt="Front Image"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg shadow-lg"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                </div>
 
-            {/* Bola 2 */}
-            <motion.div
-              className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-pink-500 rounded-full opacity-70 blur-xl"
-              animate={{
-                x: [0, -40, 40, 0],
-                y: [0, -20, 40, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Bola 3 */}
-            <motion.div
-              className="absolute top-1/3 left-1/2 w-16 h-16 bg-green-500 rounded-full opacity-70 blur-xl"
-              animate={{
-                x: [0, 50, -50, 0],
-                y: [0, 80, -50, 0],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Bola 4 */}
-            <motion.div
-              className="absolute top-1/5 right-1/5 w-20 h-20 bg-yellow-500 rounded-full opacity-70 blur-xl"
-              animate={{
-                x: [0, -60, 60, 0],
-                y: [0, -40, 60, 0],
-              }}
-              transition={{
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            {/* Bola 5 */}
-            <motion.div
-              className="absolute bottom-1/3 left-1/3 w-28 h-28 bg-purple-500 rounded-full opacity-70 blur-xl"
-              animate={{
-                x: [0, 70, -70, 0],
-                y: [0, 30, -70, 0],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-
-            <div className="relative flex justify-center mt-10 lg:mt-0">
-              <Image
-                className="w-full md:w-1/2 xl:w-[90%] object-cover h-auto rounded-lg shadow-lg shadow-gray-500"
-                src="/image.png"
-                alt="Profile Image"
-                width={100}
-                height={100}
-                draggable="false"
-                onContextMenu={(e) => e.preventDefault()}
-                unoptimized
-              />
+                <div
+                  className="absolute w-full h-full rotate-y-180 backface-hidden"
+                  style={{
+                    transform: "rotateY(180deg)",
+                  }}
+                >
+                  <Image
+                    src="/image-back.png"
+                    alt="Back Image"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg shadow-lg"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
