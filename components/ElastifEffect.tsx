@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function ElasticEffect() {
   const y = useMotionValue(0);
@@ -11,6 +12,28 @@ export default function ElasticEffect() {
     const controlPointY = Math.max(latestY / 2, 20);
     return `M 50,0 Q 50,${controlPointY} ${50 + x.get()},${latestY}`;
   });
+
+  useEffect(() => {
+    animate(y, 150, {
+      type: "spring",
+      stiffness: 150,
+      damping: 12,
+    });
+  }, []);
+
+  const handleDragEnd = () => {
+    animate(y, 150, {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+      mass: 1,
+    });
+    animate(x, 0, {
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+    });
+  };
 
   return (
     <div className="relative flex items-start justify-center h-screen">
@@ -34,7 +57,8 @@ export default function ElasticEffect() {
         animate={{ y: 150, opacity: 1 }}
         drag
         dragConstraints={{ top: -100, bottom: 200, left: -500, right: 500 }}
-        dragElastic={0.5}
+        dragElastic={0.8}
+        onDragEnd={handleDragEnd}
         style={{ x, y }}
         transition={{
           type: "spring",
@@ -42,7 +66,7 @@ export default function ElasticEffect() {
           damping: 10,
           duration: 0.8,
         }}
-        className="relative w-60 h-96 rounded-lg shadow-lg overflow-hidden"
+        className="relative w-[100%] h-[60%] rounded-lg shadow-lg overflow-hidden"
       >
         <Image
           src="/image.png"
