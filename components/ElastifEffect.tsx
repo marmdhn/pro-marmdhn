@@ -66,14 +66,13 @@ export default function ElasticEffect() {
           damping: 10,
           duration: 0.8,
         }}
-        className="relative w-[100%] h-[60%] rounded-lg shadow-lg overflow-hidden"
+        className="relative w-full h-[60%] rounded-lg shadow-lg overflow-hidden"
       >
         <Image
           src="/image.png"
           alt="ID Card"
           layout="fill"
-          objectFit="cover"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           draggable="false"
         />
       </motion.div>
