@@ -33,6 +33,6 @@ export const Works: IWorks[] = [
       "The Baitul Adab Islamic School website serves as a comprehensive landing page, providing key information on admission requirements, facilities, and school activities. It also features an online registration form for prospective students, making the enrollment process easy and accessible.",
     techStack: ["React.Js", "TailwindCss", "DaisyUI"],
     githubUrl: "",
-    websiteUrl: "https://baitul-adab.vercel.app/",
+    websiteUrl: "https://baitul-adab.vercel.app",
   },
 ];
