@@ -225,7 +225,7 @@ const Navbar = () => {
 
           <Link
             target="_blank"
-            href="https://drive.google.com/file/d/1HDHMp36Hx9q5tLQQZjtFE-RvohDncExR/view?usp=sharing"
+            href="https://drive.google.com/file/d/1HDHMp36Hx9q5tLQQZjtFE-RvohDncExR/view?usp=drive_link"
           >
             <PrimaryButton btnText="" icon={<FaFileAlt size={20} />} />
           </Link>
