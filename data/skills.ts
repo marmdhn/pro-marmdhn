@@ -1,17 +1,24 @@
 export const skills = [
-  // Frontend frameworks & libraries
-  "JavaScript (ES6+)",
+  "JavaScript",
   "TypeScript",
+  "HTML",
+  "CSS",
+  "Dart",
+  "MySQL",
+  "PostgreSQL",
+
   "React",
-  "Vue",
   "Next.js",
+  "Vue",
   "Nuxt.js",
-
-  // Backend frameworks
-  ".NET (Blazor)",
-
-  // UI/UX design & styling
-  "Tailwind CSS",
+  "Flutter",
   "Bootstrap",
+  "Tailwind",
+  ".NET",
+  "Node.js",
+
+  "Git",
+  "GitHub",
+  "Vercel",
   "Figma",
 ];
