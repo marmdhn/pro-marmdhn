@@ -72,32 +72,33 @@ const Section2 = () => {
               variants={item}
             >
               <motion.span variants={item}>
-                Hello! My name is Muhammad Akbar Ramadhan, and I have a passion
-                for creating intuitive and responsive web applications. My
-                journey into web development began during my studies at ITTelkom
-                Surabaya, where I honed my skills in HTML, CSS, and JavaScript
-                by experimenting with various projects.
+                Hello! My name is Muhammad Akbar Ramadhan, and I’m passionate
+                about building intuitive and high-performance web and mobile
+                applications. My journey in software development began during my
+                studies at Telkom University Surabaya, where I explored web
+                technologies and user-centered design principles.
               </motion.span>
               <motion.span variants={item}>
-                Fast-forward to today, I’ve had the privilege of working as a{" "}
+                Today, I work as a{" "}
                 <span className="font-bold text-primary">
-                  Front End Developer at Yayasan Pendidikan Telkom
+                  Front-End and Mobile Developer at Yayasan Pendidikan Telkom
                 </span>
-                , developing user interfaces for educational platforms. I’ve
-                also gained valuable experience working at PT. Akhdani Reka
-                Solusi as a Software Engineer, collaborating with diverse teams
-                to deliver high-quality software solutions.
+                , where I develop responsive web and mobile applications for
+                Telkom Schools. I’m responsible for implementing clean and
+                scalable codebases, optimizing performance, and maintaining
+                consistency between web and mobile platforms.
               </motion.span>
               <motion.span variants={item}>
-                In addition to front-end development, I have a strong interest
-                in UI/UX design, and I regularly use Figma to design
-                user-friendly interfaces. I also have a portfolio showcasing my
-                work in both web development and UI/UX design.
+                Previously, I worked at PT. Akhdani Reka Solusi as a Software
+                Engineer, collaborating with cross-functional teams to deliver
+                efficient and reliable software solutions aligned with client
+                needs.
               </motion.span>
               <motion.span variants={item}>
-                Currently, I focus on creating responsive, high-performance web
-                applications using modern technologies such as React.js, Vue.js,
-                and Tailwind CSS, while ensuring a seamless user experience.
+                Currently, I focus on creating modern, maintainable applications
+                using technologies such as React.js, Vue.js, Flutter, and
+                Tailwind CSS — ensuring every product I build delivers both
+                functionality and a great user experience.
               </motion.span>
             </motion.div>
 
