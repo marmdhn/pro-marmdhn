@@ -55,7 +55,7 @@ const Section3 = () => {
       id="experience"
       className="section flex flex-col lg:flex-row justify-center items-center relative w-full py-20"
     >
-      <div className="w-full flex justify-start items-center gap-2 lg:absolute lg:left-10 lg:gap-10 mb-10 lg:mb-0">
+      <div className="w-full flex justify-start items-center gap-2 lg:absolute lg:top-96 lg:left-10 lg:gap-10 mb-10 lg:mb-0">
         <h2 className="text-2xl lg:text-3xl font-sf-mono mb-0 text-start md:text-left">
           Where I’ve{" "}
           <span className="text-primary underline underline-offset-4 lg:no-underline">
@@ -109,6 +109,9 @@ const Section3 = () => {
                   >
                     <time className="font-mono italic">{experience.year}</time>
                     <div className="text-xl font-bold mb-1">
+                      <span className="text-primary italic">
+                        {experience.current && "*) "}
+                      </span>
                       {experience.title}{" "}
                       <span className="text-primary">
                         @{experience.corporate}
@@ -124,6 +127,10 @@ const Section3 = () => {
             );
           })}
         </ul>
+
+        <div className="text-lg text-center mt-12 italic text-white font-bold">
+          <span className="text-primary">*)</span> Current
+        </div>
       </motion.div>
     </section>
   );
