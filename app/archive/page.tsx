@@ -96,7 +96,7 @@ const ArchivePage = () => {
                       <div className="flex gap-4 text-secondary">
                         {archive.link.webUrl && (
                           <Link
-                            href=""
+                            href={archive.link.webUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
