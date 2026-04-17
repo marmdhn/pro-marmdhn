@@ -15,7 +15,7 @@ export const Works: IWorks[] = [
       "The PPDB Telkom Schools website streamlines the registration process for Telkom Schools in Indonesia, offering a user-friendly interface for easy application, document submission, and status tracking.",
     techStack: ["Next.Js", "React.Js", "CSS", "Bootstrap"],
     githubUrl: "",
-    websiteUrl: "https://ppdb.telkomschools.sch.id/",
+    websiteUrl: "https://ppdb.telkomschools.sch.id",
   },
   {
     imgUrl: "digits-telkomschools.png",
@@ -24,7 +24,7 @@ export const Works: IWorks[] = [
       "The DigiTS platform simplifies the re-registration process for students, while also providing comprehensive management tools for schools, covering everything from student and teacher data to academic, curriculum, and department management.",
     techStack: ["Nuxt.Js", "Vue.Js", "CSS", "Bootstrap"],
     githubUrl: "",
-    websiteUrl: "",
+    websiteUrl: "https://digits.telkomschools.sch.id",
   },
   {
     imgUrl: "baitul-adab-islamic-school.png",
