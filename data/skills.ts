@@ -6,6 +6,7 @@ export const skills = [
   "Dart",
   "MySQL",
   "PostgreSQL",
+  "DB2",
 
   "React",
   "Next.js",
@@ -16,6 +17,7 @@ export const skills = [
   "Tailwind",
   ".NET",
   "Node.js",
+  "Java Spring Boot",
 
   "Git",
   "GitHub",
