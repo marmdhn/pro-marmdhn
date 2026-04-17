@@ -143,7 +143,7 @@ const Section2 = () => {
               >
                 <div className="absolute w-full h-full backface-hidden">
                   <Image
-                    src="/image.png"
+                    src="/image-front.png"
                     alt="Front Image"
                     layout="fill"
                     objectFit="cover"
