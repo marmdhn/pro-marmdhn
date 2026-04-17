@@ -19,7 +19,7 @@ export const Archives: IArchive[] = [
     buildWith: ["Nuxt.Js", "Vue.Js", "CSS", "Bootstrap"],
     link: {
       gitHubUrl: "",
-      webUrl: "",
+      webUrl: "https://digits.telkomschools.sch.id",
     },
     detail: false,
   },
