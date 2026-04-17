@@ -51,7 +51,7 @@ const Section2 = () => {
         >
           {/* Text Section */}
           <div className="xl:w-2/3 flex flex-col gap-5 text-base lg:text-lg">
-            <div className="w-full flex items-center gap-5 lg:gap-10 mb-10">
+            <div className="w-full flex items-center gap-5 lg:gap-10">
               <motion.h2
                 className="text-2xl lg:text-3xl font-sf-mono mb-0"
                 variants={item}
@@ -73,32 +73,42 @@ const Section2 = () => {
             >
               <motion.span variants={item}>
                 Hello! My name is Muhammad Akbar Ramadhan, and I’m passionate
-                about building intuitive and high-performance web and mobile
-                applications. My journey in software development began during my
-                studies at Telkom University Surabaya, where I explored web
-                technologies and user-centered design principles.
+                about building scalable and high-performance applications across
+                web, mobile, and backend systems. My journey in software
+                development began during my studies at Telkom University
+                Surabaya, where I explored web technologies and user-centered
+                design principles.
               </motion.span>
               <motion.span variants={item}>
-                Today, I work as a{" "}
+                Currently, I work as a{" "}
+                <span className="font-bold text-primary">
+                  Software Developer at Taiwan Mobile
+                </span>
+                , where I develop and maintain scalable backend services using
+                Java. I focus on building RESTful APIs, optimizing system
+                performance, and ensuring reliability for high-traffic
+                applications.
+              </motion.span>
+              <motion.span variants={item}>
+                Previously, I worked as a{" "}
                 <span className="font-bold text-primary">
                   Front-End and Mobile Developer at Yayasan Pendidikan Telkom
                 </span>
-                , where I develop responsive web and mobile applications for
-                Telkom Schools. I’m responsible for implementing clean and
-                scalable codebases, optimizing performance, and maintaining
-                consistency between web and mobile platforms.
+                , where I developed responsive web and mobile applications for
+                Telkom Schools, ensuring clean architecture, performance
+                optimization, and consistency across platforms.
               </motion.span>
               <motion.span variants={item}>
-                Previously, I worked at PT. Akhdani Reka Solusi as a Software
+                I also have experience at PT. Akhdani Reka Solusi as a Software
                 Engineer, collaborating with cross-functional teams to deliver
                 efficient and reliable software solutions aligned with client
                 needs.
               </motion.span>
               <motion.span variants={item}>
-                Currently, I focus on creating modern, maintainable applications
-                using technologies such as React.js, Vue.js, Flutter, and
-                Tailwind CSS — ensuring every product I build delivers both
-                functionality and a great user experience.
+                I enjoy building modern, maintainable applications using
+                technologies such as Java, React.js, Vue.js, Flutter, and
+                Tailwind CSS — combining both frontend and backend expertise to
+                deliver end-to-end solutions.
               </motion.span>
             </motion.div>
 
