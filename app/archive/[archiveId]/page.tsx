@@ -11,7 +11,7 @@ const DetailArchive = ({ params }: { params: { archiveId: string } }) => {
   const [detailData, setDetailData] = useState<IArchive | null>(null);
 
   useEffect(() => {
-    const archiveIdNumber = Number(params.archiveId);
+    const archiveIdNumber = params.archiveId;
 
     const filteredData = Archives.find(
       (archive) => archive.id === archiveIdNumber,
