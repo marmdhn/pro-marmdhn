@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FaDownload, FaGithub, FaRegEye, FaAndroid } from "react-icons/fa6";
+import { FaGithub, FaRegEye, FaAndroid } from "react-icons/fa6";
 import { FaExternalLinkAlt, FaApple } from "react-icons/fa";
 import { motion } from "framer-motion";
 import StickyElement from "@/components/Home/StickyElement";
