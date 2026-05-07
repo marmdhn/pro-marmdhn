@@ -46,7 +46,7 @@ export const Archives: IArchive[] = [
       gitHubUrl: "",
     },
     detail: false,
-    status: "In Progress",
+    status: "Done",
   },
   {
     id: "and-project",
