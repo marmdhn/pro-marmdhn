@@ -46,7 +46,7 @@ const Section4 = () => {
 
   return (
     <section
-      id="work"
+      id="portfolio"
       className="section flex flex-col justify-center items-center relative w-full py-20"
     >
       <div className="flex flex-col max-w-7xl">
