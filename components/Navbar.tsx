@@ -155,11 +155,11 @@ const Navbar = () => {
               <motion.div variants={itemVariants}>
                 <button
                   onClick={() => {
-                    handleNavigation("work");
+                    handleNavigation("portfolio");
                   }}
                   className="font-sf-mono text-white px-3 rounded-md text-sm font-semibold hover:text-primary transition-all duration-200 hover:cursor-pointer"
                 >
-                  Work
+                  Portfolio
                 </button>
               </motion.div>
               <motion.div variants={itemVariants}>
@@ -232,7 +232,7 @@ const Navbar = () => {
 
           <button
             onClick={() => {
-              handleNavigation("work");
+              handleNavigation("portfolio");
             }}
             className="w-14 flex flex-col items-center text-white hover:text-primary hover:cursor-pointer hover:-translate-y-0.5 hover:scale-105 transition-all duration-200 will-change-transform"
           >
