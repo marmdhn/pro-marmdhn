@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FaDownload, FaGithub, FaRegEye } from "react-icons/fa6";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaDownload, FaGithub, FaRegEye, FaAndroid } from "react-icons/fa6";
+import { FaExternalLinkAlt, FaApple } from "react-icons/fa";
 import { motion } from "framer-motion";
 import StickyElement from "@/components/Home/StickyElement";
 import { Archives } from "@/data/archive";
@@ -69,6 +69,7 @@ const ArchivePage = () => {
                   <th>Title</th>
                   <th className="hidden lg:table-cell">Made at</th>
                   <th className="hidden lg:table-cell">Build With</th>
+                  <th className="hidden lg:table-cell">Status</th>
                   <th>Link</th>
                 </tr>
               </thead>
@@ -91,6 +92,9 @@ const ArchivePage = () => {
                     </td>
                     <td className=" hidden lg:table-cell text-lg text-secondary font-semibold pt-4">
                       {archive.buildWith.join(", ")}
+                    </td>
+                    <td className="hidden lg:table-cell text-secondary font-semibold pt-4">
+                      {archive.status}
                     </td>
                     <td>
                       <div className="flex gap-4 text-secondary">
@@ -123,16 +127,22 @@ const ArchivePage = () => {
                             <FaRegEye size={24} />
                           </Link>
                         )}
-                        {archive.link.downloadUrl && (
+                        {archive.link.downloadUrl?.map((download) => (
                           <Link
-                            href={`${archive.link.downloadUrl}`}
+                            key={download.platform}
+                            href={download.url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
+                            title={`Download ${download.platform}`}
                           >
-                            <FaDownload size={24} />
+                            {download.platform === "iOS" ? (
+                              <FaApple size={24} />
+                            ) : download.platform === "Android" ? (
+                              <FaAndroid size={24} />
+                            ) : null}
                           </Link>
-                        )}
+                        ))}
                       </div>
                     </td>
                   </motion.tr>
