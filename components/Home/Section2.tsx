@@ -72,43 +72,50 @@ const Section2 = () => {
               variants={item}
             >
               <motion.span variants={item}>
-                Hello! My name is Muhammad Akbar Ramadhan, and I’m passionate
-                about building scalable and high-performance applications across
-                web, mobile, and backend systems. My journey in software
-                development began during my studies at Telkom University
-                Surabaya, where I explored web technologies and user-centered
-                design principles.
+                Hello! I’m Muhammad Akbar Ramadhan, a Software Developer
+                passionate about building scalable and user-focused digital
+                products across web, mobile, and enterprise systems.
               </motion.span>
+
               <motion.span variants={item}>
                 Currently, I work as a{" "}
                 <span className="font-bold text-primary">
                   Software Developer at Taiwan Mobile
                 </span>
-                , where I develop and maintain scalable backend services using
-                Java. I focus on building RESTful APIs, optimizing system
-                performance, and ensuring reliability for high-traffic
-                applications.
+                , where I contribute to enterprise application modernization
+                using React.js, Spring Boot, and DB2. My work involves
+                understanding legacy systems, developing modern solutions,
+                integrating APIs, and improving application reliability within
+                Agile development environments.
               </motion.span>
+
               <motion.span variants={item}>
                 Previously, I worked as a{" "}
                 <span className="font-bold text-primary">
                   Front-End and Mobile Developer at Yayasan Pendidikan Telkom
                 </span>
-                , where I developed responsive web and mobile applications for
-                Telkom Schools, ensuring clean architecture, performance
-                optimization, and consistency across platforms.
+                , developing responsive web and mobile applications for Telkom
+                Schools using technologies such as Flutter, Vue.js, and Nuxt.js.
+                I focused on building maintainable architectures, optimizing
+                performance, and delivering consistent user experiences across
+                platforms.
               </motion.span>
+
               <motion.span variants={item}>
-                I also have experience at PT. Akhdani Reka Solusi as a Software
-                Engineer, collaborating with cross-functional teams to deliver
-                efficient and reliable software solutions aligned with client
-                needs.
+                I also gained experience as a{" "}
+                <span className="font-bold text-primary">
+                  Software Engineer at PT. Akhdani Reka Solusi
+                </span>
+                , collaborating with cross-functional teams to deliver reliable
+                and efficient software solutions aligned with business and
+                client needs.
               </motion.span>
+
               <motion.span variants={item}>
-                I enjoy building modern, maintainable applications using
-                technologies such as Java, React.js, Vue.js, Flutter, and
-                Tailwind CSS — combining both frontend and backend expertise to
-                deliver end-to-end solutions.
+                I enjoy building modern applications using technologies such as
+                React.js, Spring Boot, Flutter, and Tailwind CSS while
+                continuously learning new tools and approaches to create
+                scalable and impactful digital solutions.
               </motion.span>
             </motion.div>
 
