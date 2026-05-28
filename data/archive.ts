@@ -26,6 +26,19 @@ export interface IArchive {
 
 export const Archives: IArchive[] = [
   {
+    id: "meet-mind",
+    year: 2026,
+    title: "Meet Mind",
+    madeAt: "Personal Project",
+    buildWith: ["Next.Js", "TailwindCss", "Deepgram (Nova-3), OpenRouter"],
+    link: {
+      gitHubUrl: "https://github.com/marmdhn/meet-mind",
+      webUrl: "https://meetmind.marmdhn.com/",
+    },
+    detail: false,
+    status: "Done",
+  },
+  {
     id: "mobile-digits",
     year: 2025,
     title: "Mobile App DIGITS",
