@@ -68,6 +68,7 @@ export const Archives: IArchive[] = [
     madeAt: "Personal Project",
     buildWith: ["Next.Js", "TailwindCss", "Framer Motion"],
     link: {
+      gitHubUrl: "",
       webUrl: "https://and.marmdhn.com/",
     },
     detail: false,
