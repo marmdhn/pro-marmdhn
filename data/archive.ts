@@ -33,7 +33,7 @@ export const Archives: IArchive[] = [
     buildWith: ["Next.Js", "TailwindCss", "Deepgram (Nova-3), OpenRouter"],
     link: {
       gitHubUrl: "https://github.com/marmdhn/meet-mind",
-      webUrl: "https://meetmind.marmdhn.com/",
+      webUrl: "https://meetmind.byandproject.com/",
     },
     detail: false,
     status: "Done",
@@ -69,7 +69,7 @@ export const Archives: IArchive[] = [
     buildWith: ["Next.Js", "TailwindCss", "Framer Motion"],
     link: {
       gitHubUrl: "",
-      webUrl: "https://and.marmdhn.com/",
+      webUrl: "https://byandproject.com/",
     },
     detail: false,
     status: "In Progress",
