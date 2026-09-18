@@ -7,22 +7,27 @@ interface ClientSideLayoutProps {
   children: ReactNode;
 }
 
+type Stage = "logo" | "revealing" | "done";
+
 export default function ClientSideLayout({ children }: ClientSideLayoutProps) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [stage, setStage] = useState<Stage>("logo");
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsFadingOut(true);
-      setTimeout(() => setIsLoading(false), 1000);
-    }, 1500);
+    const revealTimer = setTimeout(() => setStage("revealing"), 1500);
+    const doneTimer = setTimeout(() => setStage("done"), 1500 + 1600);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(revealTimer);
+      clearTimeout(doneTimer);
+    };
   }, []);
 
-  if (isLoading) {
-    return <Loading isFadingOut={isFadingOut} />;
-  }
-
-  return <>{children}</>;
+  return (
+    <>
+      {stage !== "logo" && children}
+      {stage !== "done" && (
+        <Loading phase={stage === "logo" ? "logo" : "reveal"} />
+      )}
+    </>
+  );
 }
