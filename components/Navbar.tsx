@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
+import MarLogo from "@/components/MarLogo";
 
 const NAV_ITEMS = [
   { label: "About", to: "about" },
@@ -18,9 +19,10 @@ const Navbar = () => {
           to="hero"
           smooth={true}
           duration={500}
-          className="font-calibre text-sm tracking-widest uppercase hover:cursor-pointer hover:text-primary transition-colors duration-200"
+          aria-label="Marmdhn"
+          className="text-neutral-900 hover:text-primary hover:cursor-pointer transition-colors duration-200"
         >
-          Marmdhn
+          <MarLogo className="h-7 w-auto" />
         </ScrollLink>
 
         <div className="flex items-center gap-6 md:gap-8">
@@ -39,7 +41,7 @@ const Navbar = () => {
           ))}
           <Link
             href="/v1/cv"
-            className="text-sm border border-neutral-300 rounded-full px-4 py-1.5 hover:border-primary hover:text-primary transition-colors duration-200"
+            className="inline-flex items-center leading-none h-9 px-4 text-sm border border-neutral-300 rounded-full hover:border-primary hover:text-primary transition-colors duration-200"
           >
             Resume
           </Link>
