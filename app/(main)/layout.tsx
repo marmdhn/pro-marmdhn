@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/FadeIn";
 import WritingIntro from "@/components/WritingIntro";
+import CursorGlow from "@/components/CursorGlow";
 
 export default function MainLayout({
   children,
@@ -15,6 +16,7 @@ export default function MainLayout({
       <SmoothScroll>
         <WritingIntro>
           <div className="bg-surface text-ink min-h-screen font-calibre">
+            <CursorGlow />
             <Navbar />
             <FadeIn>
               <main>{children}</main>
