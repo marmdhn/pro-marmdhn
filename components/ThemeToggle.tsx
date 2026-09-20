@@ -1,18 +1,8 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { FaMoon, FaSun } from "react-icons/fa6";
-
-const emptySubscribe = () => () => {};
-
-// Hydration-safe "mounted" flag, without an effect-based setState.
-const useHasMounted = () =>
-  useSyncExternalStore(
-    emptySubscribe,
-    () => true,
-    () => false,
-  );
+import { useHasMounted } from "@/lib/useHasMounted";
 
 interface ViewTransition {
   ready: Promise<void>;
