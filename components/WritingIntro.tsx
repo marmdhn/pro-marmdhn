@@ -62,24 +62,28 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
           >
             <g transform="scale(1,-1)">
               {glyphs.letters.map((letter, i) => {
-                const clipId = `intro-letter-${i}`;
+                const maskId = `intro-mask-${i}`;
                 return (
                   <g key={i} transform={`translate(${letter.x}, 0)`}>
-                    <clipPath id={clipId}>
-                      <motion.rect
-                        x={0}
-                        y={-2000}
-                        height={4000}
-                        initial={{ width: 0 }}
-                        animate={{ width: letter.revealWidth }}
+                    {/* Thick stroke traced as a pen, used as a mask so the fill draws in solid */}
+                    <mask id={maskId}>
+                      <motion.path
+                        d={letter.d}
+                        fill="none"
+                        stroke="white"
+                        strokeWidth={glyphs.maskStrokeWidth}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
                         transition={{
                           duration: LETTER_DURATION,
                           delay: i * LETTER_STAGGER,
                           ease: "easeInOut",
                         }}
                       />
-                    </clipPath>
-                    <path d={letter.d} className="fill-white" clipPath={`url(#${clipId})`} />
+                    </mask>
+                    <path d={letter.d} className="fill-white" mask={`url(#${maskId})`} />
                   </g>
                 );
               })}
