@@ -83,7 +83,7 @@ const Navbar = () => {
             ),
           )}
           <Link
-            href="/v1/cv"
+            href="/cv"
             className="inline-block leading-none pt-[13px] pb-[9px] px-4 text-sm border border-neutral-300 rounded-full hover:border-primary hover:text-primary transition-colors duration-200"
           >
             Resume
