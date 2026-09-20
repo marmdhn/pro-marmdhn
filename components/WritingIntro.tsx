@@ -6,9 +6,17 @@ import glyphs from "@/data/marmdhnGlyphs.json";
 
 type Stage = "writing" | "curtain" | "done";
 
-const WRITE_MS = 1500;
-const CURTAIN_MS = 650;
+const LETTER_DURATION = 0.5;
+const LETTER_STAGGER = 0.22;
 const PANEL_COUNT = 8;
+const PANEL_DURATION = 0.75;
+const PANEL_STAGGER = 0.06;
+
+// Timeouts derived from the animation constants so the overlay never unmounts mid-animation.
+const WRITE_MS =
+  (LETTER_STAGGER * (glyphs.letters.length - 1) + LETTER_DURATION) * 1000 + 300;
+const CURTAIN_MS =
+  (PANEL_STAGGER * (PANEL_COUNT - 1) + PANEL_DURATION) * 1000 + 200;
 
 const WritingIntro = ({ children }: { children: ReactNode }) => {
   const [stage, setStage] = useState<Stage>("writing");
@@ -45,8 +53,8 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
                   transition={{
-                    duration: 0.35,
-                    delay: i * 0.15,
+                    duration: LETTER_DURATION,
+                    delay: i * LETTER_STAGGER,
                     ease: "easeInOut",
                   }}
                 />
@@ -59,12 +67,12 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
               {Array.from({ length: PANEL_COUNT }).map((_, i) => (
                 <motion.div
                   key={i}
-                  className="h-full flex-1 bg-surface border-r border-line last:border-r-0"
+                  className="h-full flex-1 bg-primary border-r border-black/10 last:border-r-0"
                   initial={{ y: 0 }}
                   animate={{ y: "-100%" }}
                   transition={{
-                    duration: CURTAIN_MS / 1000,
-                    delay: i * 0.04,
+                    duration: PANEL_DURATION,
+                    delay: i * PANEL_STAGGER,
                     ease: [0.76, 0, 0.24, 1],
                   }}
                 />
