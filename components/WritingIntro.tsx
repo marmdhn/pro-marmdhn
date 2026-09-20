@@ -12,17 +12,9 @@ const PANEL_COUNT = 8;
 const PANEL_DURATION = 0.75;
 const PANEL_STAGGER = 0.06;
 
-const FILL_DELAY = 0.1;
-const FILL_DURATION = 0.3;
-
 // Timeouts derived from the animation constants so the overlay never unmounts mid-animation.
 const WRITE_MS =
-  (LETTER_STAGGER * (glyphs.letters.length - 1) +
-    LETTER_DURATION +
-    FILL_DELAY +
-    FILL_DURATION) *
-    1000 +
-  300;
+  (LETTER_STAGGER * (glyphs.letters.length - 1) + LETTER_DURATION) * 1000 + 300;
 const CURTAIN_MS =
   (PANEL_STAGGER * (PANEL_COUNT - 1) + PANEL_DURATION) * 1000 + 200;
 
@@ -69,31 +61,28 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <g transform="scale(1,-1)">
-              {glyphs.letters.map((letter, i) => (
-                <motion.path
-                  key={i}
-                  d={letter.d}
-                  transform={`translate(${letter.x}, 0)`}
-                  className="stroke-white fill-white"
-                  strokeWidth={6}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  initial={{ pathLength: 0, fillOpacity: 0 }}
-                  animate={{ pathLength: 1, fillOpacity: 1 }}
-                  transition={{
-                    pathLength: {
-                      duration: LETTER_DURATION,
-                      delay: i * LETTER_STAGGER,
-                      ease: "easeInOut",
-                    },
-                    fillOpacity: {
-                      duration: FILL_DURATION,
-                      delay: i * LETTER_STAGGER + LETTER_DURATION + FILL_DELAY,
-                      ease: "easeOut",
-                    },
-                  }}
-                />
-              ))}
+              {glyphs.letters.map((letter, i) => {
+                const clipId = `intro-letter-${i}`;
+                return (
+                  <g key={i} transform={`translate(${letter.x}, 0)`}>
+                    <clipPath id={clipId}>
+                      <motion.rect
+                        x={0}
+                        y={-2000}
+                        height={4000}
+                        initial={{ width: 0 }}
+                        animate={{ width: letter.revealWidth }}
+                        transition={{
+                          duration: LETTER_DURATION,
+                          delay: i * LETTER_STAGGER,
+                          ease: "easeInOut",
+                        }}
+                      />
+                    </clipPath>
+                    <path d={letter.d} className="fill-white" clipPath={`url(#${clipId})`} />
+                  </g>
+                );
+              })}
             </g>
           </motion.svg>
         </div>
