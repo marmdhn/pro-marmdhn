@@ -72,7 +72,7 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
                         fill="none"
                         stroke="white"
                         strokeWidth={glyphs.maskStrokeWidth}
-                        strokeLinecap="round"
+                        strokeLinecap="butt"
                         strokeLinejoin="round"
                         initial={{ pathLength: 0 }}
                         animate={{ pathLength: 1 }}
