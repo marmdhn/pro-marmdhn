@@ -152,9 +152,8 @@ const Section2 = () => {
                   <Image
                     src="/image-front.png"
                     alt="Front Image"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg shadow-lg"
+                    fill
+                    className="rounded-lg shadow-lg object-cover"
                     draggable="false"
                     onContextMenu={(e) => e.preventDefault()}
                   />
@@ -169,9 +168,8 @@ const Section2 = () => {
                   <Image
                     src="/image-back.png"
                     alt="Back Image"
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg shadow-lg"
+                    fill
+                    className="rounded-lg shadow-lg object-cover"
                     draggable="false"
                     onContextMenu={(e) => e.preventDefault()}
                   />

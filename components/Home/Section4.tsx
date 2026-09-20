@@ -6,7 +6,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
 import { Works } from "@/data/works";
 import PrimaryButton from "@/components/PrimaryButton";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
@@ -22,7 +22,7 @@ const Section4 = () => {
     }
   }, [controls, inView]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -32,7 +32,7 @@ const Section4 = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,

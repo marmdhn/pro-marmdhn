@@ -1,26 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { IArchive, Archives } from "@/data/archive";
-import { motion } from "framer-motion";
+import { useMemo } from "react";
+import { useParams } from "next/navigation";
+import { Archives } from "@/data/archive";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 
-const DetailArchive = ({ params }: { params: { archiveId: string } }) => {
-  const [detailData, setDetailData] = useState<IArchive | null>(null);
+const DetailArchive = () => {
+  const params = useParams<{ archiveId: string }>();
+  const detailData = useMemo(
+    () => Archives.find((archive) => archive.id === params.archiveId) ?? null,
+    [params.archiveId],
+  );
 
-  useEffect(() => {
-    const archiveIdNumber = params.archiveId;
-
-    const filteredData = Archives.find(
-      (archive) => archive.id === archiveIdNumber,
-    );
-
-    setDetailData(filteredData || null);
-  }, [params.archiveId]);
-
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: -50 },
     visible: {
       opacity: 1,
@@ -29,7 +24,7 @@ const DetailArchive = ({ params }: { params: { archiveId: string } }) => {
     },
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,

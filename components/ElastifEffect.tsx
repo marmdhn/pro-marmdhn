@@ -71,7 +71,7 @@ export default function ElasticEffect() {
         <Image
           src="/image.png"
           alt="ID Card"
-          layout="fill"
+          fill
           className="w-full h-full object-contain"
           draggable="false"
         />
