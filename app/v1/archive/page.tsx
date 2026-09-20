@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaGithub, FaRegEye, FaAndroid } from "react-icons/fa6";
 import { FaExternalLinkAlt, FaApple } from "react-icons/fa";
 import { motion } from "framer-motion";
-import StickyElement from "@/components/Home/StickyElement";
+import StickyElement from "@/components/v1/Home/StickyElement";
 import { Archives } from "@/data/archive";
 
 const fadeIn = {
@@ -120,7 +120,7 @@ const ArchivePage = () => {
                         )}
                         {archive.detail && (
                           <Link
-                            href={`/archive/${archive.id}`}
+                            href={`/v1/archive/${archive.id}`}
                             rel="noopener noreferrer"
                             className="hover:text-primary hover:scale-110 transition-all duration-300"
                           >

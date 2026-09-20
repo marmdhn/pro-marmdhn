@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Link as LinkElement, scroller } from "react-scroll";
-import PrimaryButton from "@/components/PrimaryButton";
+import PrimaryButton from "@/components/v1/PrimaryButton";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { FaBriefcase, FaEnvelope, FaLaptopCode, FaUser } from "react-icons/fa6";
@@ -60,8 +60,8 @@ const Navbar = () => {
   }, [pathname, scrollTarget]);
 
   const handleNavigation = (to: string) => {
-    if (pathname !== "/") {
-      router.push("/");
+    if (pathname !== "/v1") {
+      router.push("/v1");
       setScrollTarget(to);
     } else {
       scroller.scrollTo(to, {
@@ -103,7 +103,7 @@ const Navbar = () => {
       >
         <div className="h-[25px] my-[25px] relative flex items-center justify-between">
           <div className="col-span-1 me-auto">
-            {pathname === "/" ? (
+            {pathname === "/v1" ? (
               <LinkElement
                 to="hero"
                 smooth={true}
@@ -119,7 +119,7 @@ const Navbar = () => {
                 />
               </LinkElement>
             ) : (
-              <Link href="/" className="hidden sm:block hover:cursor-pointer">
+              <Link href="/v1" className="hidden sm:block hover:cursor-pointer">
                 <Image
                   src="/logo.svg"
                   alt="Logo"
@@ -173,7 +173,7 @@ const Navbar = () => {
                 </button>
               </motion.div>
               <motion.div variants={itemVariants}>
-                <Link href="/cv">
+                <Link href="/v1/cv">
                   <PrimaryButton btnText="Resume" />
                 </Link>
               </motion.div>
@@ -223,10 +223,7 @@ const Navbar = () => {
             <FaBriefcase size={20} />
           </button>
 
-          <Link
-            target="_blank"
-            href="https://drive.google.com/file/d/13HepX_uGxjmKAeSuot0qwmh2TK0DCtQe/view?usp=sharing"
-          >
+          <Link href="/v1/cv">
             <PrimaryButton btnText="" icon={<FaFileAlt size={20} />} />
           </Link>
 

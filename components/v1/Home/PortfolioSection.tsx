@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Link from "next/link";
 import { Works } from "@/data/works";
-import PrimaryButton from "@/components/PrimaryButton";
+import PrimaryButton from "@/components/v1/PrimaryButton";
 import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -146,7 +146,7 @@ const PortfolioSection = () => {
           ))}
         </motion.div>
       </div>
-      <Link href={"/archive"} className="mt-16 lg:mt-32">
+      <Link href={"/v1/archive"} className="mt-16 lg:mt-32">
         <PrimaryButton btnText={"View More"} />
       </Link>
     </section>

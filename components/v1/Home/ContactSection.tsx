@@ -1,6 +1,6 @@
 "use client";
 
-import PrimaryButton from "@/components/PrimaryButton";
+import PrimaryButton from "@/components/v1/PrimaryButton";
 import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";

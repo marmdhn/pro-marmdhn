@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ClientSideLayout from "@/components/ClientSideLayout";
 
 export const metadata: Metadata = {
   title: "MARMDHN",
@@ -16,15 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
-        <ClientSideLayout>
-          <Navbar />
-          <div className="px-0 md:px-[50px] pb-[50px]">
-            {children}
-            <Footer />
-          </div>
-        </ClientSideLayout>
-      </body>
+      <body className={`antialiased`}>{children}</body>
     </html>
   );
 }

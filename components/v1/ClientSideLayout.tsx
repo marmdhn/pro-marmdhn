@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, ReactNode } from "react";
-import Loading from "@/components/Loading";
+import Loading from "@/components/v1/Loading";
 
 interface ClientSideLayoutProps {
   children: ReactNode;
