@@ -6,7 +6,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32"
+      className="min-h-screen flex flex-col justify-center max-w-5xl mx-auto px-6 md:px-10 py-24"
     >
       <Reveal>
         <SectionHeading index="01" label="About" />

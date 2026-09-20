@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-40"
+      className="min-h-screen flex flex-col justify-center max-w-5xl mx-auto px-6 md:px-10 py-24"
     >
       <Reveal>
         <SectionHeading index="04" label="Contact" />
