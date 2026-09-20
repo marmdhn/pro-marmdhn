@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useLenis } from "lenis/react";
+import { FaBars, FaXmark } from "react-icons/fa6";
 import MarLogo from "@/components/MarLogo";
 import ThemeToggle from "@/components/ThemeToggle";
 import { scrollToSection } from "@/lib/scrollToSection";
@@ -22,6 +23,7 @@ const Navbar = () => {
   const pendingTarget = useRef<string | null>(null);
   const isHome = pathname === "/";
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isHome && pendingTarget.current && lenis) {
@@ -54,6 +56,7 @@ const Navbar = () => {
   }, [isHome]);
 
   const goTo = (to: string) => {
+    setMenuOpen(false);
     if (isHome) {
       scrollToSection(lenis, to);
     } else {
@@ -100,12 +103,45 @@ const Navbar = () => {
           <ThemeToggle />
           <Link
             href="/cv"
-            className="inline-block leading-none pt-[13px] pb-[9px] px-4 text-sm border border-line rounded-full hover:border-primary hover:text-primary transition-colors duration-200"
+            className="hidden sm:inline-block leading-none pt-[13px] pb-[9px] px-4 text-sm border border-line rounded-full hover:border-primary hover:text-primary transition-colors duration-200"
+          >
+            Resume
+          </Link>
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen((open) => !open)}
+            className="sm:hidden text-ink-muted hover:text-primary transition-colors duration-200"
+          >
+            {menuOpen ? <FaXmark size={20} /> : <FaBars size={20} />}
+          </button>
+        </div>
+      </div>
+
+      {menuOpen && (
+        <div className="sm:hidden border-t border-line bg-surface px-6 py-6 flex flex-col gap-5">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.to}
+              onClick={() => goTo(item.to)}
+              className={`text-left text-base hover:text-primary transition-colors duration-200 ${
+                isHome && activeSection === item.to
+                  ? "text-primary"
+                  : "text-ink-muted"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+          <Link
+            href="/cv"
+            onClick={() => setMenuOpen(false)}
+            className="text-left text-base text-ink-muted hover:text-primary transition-colors duration-200"
           >
             Resume
           </Link>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
