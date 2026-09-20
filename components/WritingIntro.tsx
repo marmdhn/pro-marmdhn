@@ -6,9 +6,10 @@ import glyphs from "@/data/marmdhnGlyphs.json";
 
 type Stage = "writing" | "curtain" | "done";
 
-const LETTER_DURATION = 0.5;
-const LETTER_STAGGER = 0.22;
-const PANEL_COUNT = 8;
+const LETTER_DURATION = 1;
+const LETTER_OVERLAP = 0.25; // fraction of a letter still drawing when the next one starts
+const LETTER_STAGGER = LETTER_DURATION * (1 - LETTER_OVERLAP);
+const PANEL_COUNT = 10;
 const PANEL_DURATION = 0.75;
 const PANEL_STAGGER = 0.06;
 
@@ -57,7 +58,10 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
           <motion.svg
             viewBox={glyphs.viewBox}
             className="absolute inset-0 m-auto w-[80vw] max-w-xl h-auto"
-            animate={{ opacity: isCurtain ? 0 : 1, scale: isCurtain ? 0.85 : 1 }}
+            animate={{
+              opacity: isCurtain ? 0 : 1,
+              scale: isCurtain ? 0.85 : 1,
+            }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
             <g transform="scale(1,-1)">
@@ -83,7 +87,11 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
                         }}
                       />
                     </mask>
-                    <path d={letter.d} className="fill-white" mask={`url(#${maskId})`} />
+                    <path
+                      d={letter.d}
+                      className="fill-white"
+                      mask={`url(#${maskId})`}
+                    />
                   </g>
                 );
               })}
