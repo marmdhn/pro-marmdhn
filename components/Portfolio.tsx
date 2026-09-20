@@ -54,7 +54,7 @@ const Portfolio = () => {
       </div>
       <Reveal delay={0.2} className="mt-12">
         <Link
-          href="/v1/archive"
+          href="/archive"
           className="text-sm text-neutral-500 hover:text-primary transition-colors duration-200"
         >
           View more projects &#8594;
