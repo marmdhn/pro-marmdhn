@@ -3,7 +3,7 @@
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 
-const Section1 = () => {
+const HeroSection = () => {
   return (
     <motion.section
       id="hero"
@@ -52,4 +52,4 @@ const Section1 = () => {
   );
 };
 
-export default Section1;
+export default HeroSection;

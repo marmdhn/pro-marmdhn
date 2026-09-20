@@ -10,7 +10,7 @@ import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-const Section4 = () => {
+const PortfolioSection = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.25,
@@ -153,4 +153,4 @@ const Section4 = () => {
   );
 };
 
-export default Section4;
+export default PortfolioSection;

@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import Link from "next/link";
 
-const Section5 = () => {
+const ContactSection = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.25,
@@ -85,4 +85,4 @@ const Section5 = () => {
   );
 };
 
-export default Section5;
+export default ContactSection;

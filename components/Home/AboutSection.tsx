@@ -7,7 +7,7 @@ import { skills } from "@/data/skills";
 import { BsTriangleFill } from "react-icons/bs";
 import Image from "next/image";
 
-const Section2 = () => {
+const AboutSection = () => {
   const [isFlipped, setIsFlipped] = useState(false);
   const controls = useAnimation();
   const { ref, inView } = useInView({
@@ -183,4 +183,4 @@ const Section2 = () => {
   );
 };
 
-export default Section2;
+export default AboutSection;

@@ -5,7 +5,7 @@ import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-const Section3 = () => {
+const ExperienceSection = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.25,
@@ -136,4 +136,4 @@ const Section3 = () => {
   );
 };
 
-export default Section3;
+export default ExperienceSection;
