@@ -17,7 +17,7 @@ const SOCIAL_LINKS = [
 
 const Footer = () => {
   return (
-    <footer className="max-w-5xl mx-auto px-6 md:px-10 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
+    <footer className="max-w-5xl mx-auto px-6 md:px-10 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink-faint">
       <span>&copy; {new Date().getFullYear()} Muhammad Akbar Ramadhan.</span>
       <div className="flex items-center gap-5">
         {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (

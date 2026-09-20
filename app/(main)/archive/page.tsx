@@ -32,8 +32,8 @@ const ArchivePage = () => {
       <div className="mt-16 flex flex-col">
         {Archives.map((archive, index) => (
           <Reveal key={archive.id} delay={Math.min(index * 0.04, 0.3)}>
-            <div className="py-6 border-t border-neutral-200 flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
-              <span className="md:w-16 shrink-0 text-sm text-neutral-400">
+            <div className="py-6 border-t border-line flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
+              <span className="md:w-16 shrink-0 text-sm text-ink-faint">
                 {archive.year}
               </span>
 
@@ -46,12 +46,12 @@ const ArchivePage = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-neutral-500">
+                <p className="text-sm text-ink-faint">
                   {archive.madeAt} &middot; {archive.buildWith.join(", ")}
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 text-neutral-400 shrink-0">
+              <div className="flex items-center gap-4 text-ink-faint shrink-0">
                 {archive.link.webUrl && (
                   <Link
                     href={archive.link.webUrl}

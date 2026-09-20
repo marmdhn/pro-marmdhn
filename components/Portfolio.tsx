@@ -16,8 +16,8 @@ const Portfolio = () => {
       <div className="flex flex-col">
         {Works.map((work, index) => (
           <Reveal key={work.title} delay={index * 0.05}>
-            <div className="group py-10 border-t border-neutral-200">
-              <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg bg-neutral-100 mb-6">
+            <div className="group py-10 border-t border-line">
+              <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-lg bg-surface-muted mb-6">
                 <Image
                   src={`/work/${work.imgUrl}`}
                   alt={work.title}
@@ -41,11 +41,11 @@ const Portfolio = () => {
                     work.title
                   )}
                 </h3>
-                <span className="text-sm text-neutral-400">
+                <span className="text-sm text-ink-faint">
                   {work.techStack.join(" / ")}
                 </span>
               </div>
-              <p className="mt-3 text-neutral-600 max-w-2xl">
+              <p className="mt-3 text-ink-muted max-w-2xl">
                 {work.description}
               </p>
             </div>
@@ -55,7 +55,7 @@ const Portfolio = () => {
       <Reveal delay={0.2} className="mt-12">
         <Link
           href="/archive"
-          className="text-sm text-neutral-500 hover:text-primary transition-colors duration-200"
+          className="text-sm text-ink-faint hover:text-primary transition-colors duration-200"
         >
           View more projects &#8594;
         </Link>

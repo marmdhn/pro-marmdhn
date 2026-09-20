@@ -23,7 +23,7 @@ const Contact = () => {
       <Reveal delay={0.2}>
         <Link
           href="mailto:makbarramadhan62@gmail.com"
-          className="relative inline-block mt-10 text-lg text-neutral-900 hover:text-primary transition-colors duration-200 w-fit"
+          className="relative inline-block mt-10 text-lg text-ink hover:text-primary transition-colors duration-200 w-fit"
         >
           makbarramadhan62@gmail.com
           <Squiggle className="absolute left-0 top-full w-full h-2 -mt-1" />

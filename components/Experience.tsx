@@ -14,8 +14,8 @@ const Experience = () => {
       <div className="flex flex-col">
         {Experiences.map((experience, index) => (
           <Reveal key={experience.corporate + experience.year} delay={index * 0.05}>
-            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-8 border-t border-neutral-200">
-              <div className="md:w-32 shrink-0 flex items-center gap-2 text-sm text-neutral-500">
+            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-8 border-t border-line">
+              <div className="md:w-32 shrink-0 flex items-center gap-2 text-sm text-ink-faint">
                 {experience.current && (
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 )}
@@ -24,11 +24,11 @@ const Experience = () => {
               <div>
                 <h3 className="text-xl md:text-2xl font-bold">
                   {experience.title}{" "}
-                  <span className="text-neutral-400 font-normal">
+                  <span className="text-ink-faint font-normal">
                     @ {experience.corporate}
                   </span>
                 </h3>
-                <p className="mt-3 text-neutral-600 max-w-2xl">
+                <p className="mt-3 text-ink-muted max-w-2xl">
                   {experience.description}
                 </p>
               </div>

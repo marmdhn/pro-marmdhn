@@ -14,11 +14,11 @@ const About = () => {
       <Reveal delay={0.1} className="relative max-w-3xl">
         <span
           aria-hidden="true"
-          className="font-adelia absolute -top-10 -left-4 md:-left-10 text-8xl md:text-9xl text-neutral-100 select-none"
+          className="font-adelia absolute -top-10 -left-4 md:-left-10 text-8xl md:text-9xl text-ink-ghost select-none"
         >
           &ldquo;
         </span>
-        <p className="relative text-2xl md:text-3xl leading-relaxed text-neutral-800">
+        <p className="relative text-2xl md:text-3xl leading-relaxed text-ink">
           I&apos;m a{" "}
           <span className="font-adelia italic text-primary">software developer</span>{" "}
           currently working as a backend engineer at Taiwan Mobile, building
@@ -28,12 +28,12 @@ const About = () => {
         </p>
       </Reveal>
       <Reveal delay={0.2} className="mt-12">
-        <div className="flex flex-wrap gap-x-3 gap-y-2 text-sm text-neutral-500">
+        <div className="flex flex-wrap gap-x-3 gap-y-2 text-sm text-ink-faint">
           {skills.map((skill, index) => (
             <span key={skill}>
               {skill}
               {index < skills.length - 1 && (
-                <span className="text-neutral-300"> &middot;</span>
+                <span className="text-ink-ghost"> &middot;</span>
               )}
             </span>
           ))}

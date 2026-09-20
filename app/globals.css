@@ -53,6 +53,25 @@
 :root {
   --background: #1B1C21;
   --foreground: #ededed;
+
+  /* Tokens for the new (main) design only — v1 uses --background/--foreground above */
+  --surface: 255 255 255;
+  --surface-muted: 245 245 245;
+  --ink: 23 23 23;
+  --ink-muted: 82 82 82;
+  --ink-faint: 163 163 163;
+  --ink-ghost: 236 236 236;
+  --line: 229 229 229;
+}
+
+.dark {
+  --surface: 10 10 10;
+  --surface-muted: 23 23 23;
+  --ink: 250 250 250;
+  --ink-muted: 163 163 163;
+  --ink-faint: 82 82 82;
+  --ink-ghost: 38 38 38;
+  --line: 38 38 38;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -60,6 +79,24 @@
     --background: #1B1C21;
     --foreground: #ededed;
   }
+}
+
+/* Lenis (mounted only within the (main) route group) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {

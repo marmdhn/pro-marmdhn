@@ -1,8 +1,9 @@
 "use client";
 
-import { Link as ScrollLink } from "react-scroll";
 import { motion, Variants } from "framer-motion";
+import { useLenis } from "lenis/react";
 import Squiggle from "@/components/Squiggle";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const LINE_ONE = ["Muhammad", "Akbar"];
 const LINE_TWO = ["Ramadhan"];
@@ -27,6 +28,8 @@ const HeadlineLine = ({ words }: { words: string[] }) => (
 );
 
 const Hero = () => {
+  const lenis = useLenis();
+
   return (
     <section
       id="hero"
@@ -55,7 +58,7 @@ const Hero = () => {
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
         className="mt-8 max-w-xl"
       >
-        <p className="text-lg text-neutral-600 border-l-2 border-primary pl-4">
+        <p className="text-lg text-ink-muted border-l-2 border-primary pl-4">
           I build reliable backend{" "}
           <span className="relative inline-block whitespace-nowrap">
             services and APIs
@@ -65,14 +68,12 @@ const Hero = () => {
           project needs one.
         </p>
       </motion.div>
-      <ScrollLink
-        to="about"
-        smooth={true}
-        duration={500}
-        className="mt-12 text-sm text-neutral-500 hover:text-primary hover:cursor-pointer transition-colors duration-200 w-fit"
+      <button
+        onClick={() => scrollToSection(lenis, "about")}
+        className="mt-12 text-sm text-ink-faint hover:text-primary hover:cursor-pointer transition-colors duration-200 w-fit"
       >
         Scroll down &#8595;
-      </ScrollLink>
+      </button>
     </section>
   );
 };

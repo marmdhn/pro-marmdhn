@@ -32,7 +32,7 @@ const ArchiveDetailView = ({
 
       {detailData.imageCover && coverSize && (
         <Reveal delay={0.1}>
-          <div className="relative w-full rounded-lg overflow-hidden bg-neutral-100 mb-16">
+          <div className="relative w-full rounded-lg overflow-hidden bg-surface-muted mb-16">
             <Image
               src={`/archive/${detailData.imageCover.fileUrl}`}
               alt={detailData.title}
@@ -57,7 +57,7 @@ const ArchiveDetailView = ({
               return (
                 <div
                   key={photo}
-                  className="rounded-md overflow-hidden bg-neutral-100 self-start"
+                  className="rounded-md overflow-hidden bg-surface-muted self-start"
                 >
                   <Zoom zoomMargin={40}>
                     <Image
@@ -79,7 +79,7 @@ const ArchiveDetailView = ({
       <Reveal delay={0.3}>
         <Link
           href="/archive"
-          className="mt-16 inline-block text-sm text-neutral-500 hover:text-primary transition-colors duration-200"
+          className="mt-16 inline-block text-sm text-ink-faint hover:text-primary transition-colors duration-200"
         >
           &#8592; Back to archive
         </Link>

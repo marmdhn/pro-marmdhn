@@ -35,7 +35,7 @@ const CvPage = () => {
           <Link
             href={CV_URL}
             download
-            className="inline-block leading-none pt-[13px] pb-[9px] px-4 text-sm border border-neutral-300 rounded-full hover:border-primary hover:text-primary transition-colors duration-200 w-fit"
+            className="inline-block leading-none pt-[13px] pb-[9px] px-4 text-sm border border-line rounded-full hover:border-primary hover:text-primary transition-colors duration-200 w-fit"
           >
             Download PDF
           </Link>
@@ -43,10 +43,10 @@ const CvPage = () => {
       </Reveal>
 
       <Reveal delay={0.1}>
-        <div className="relative w-full aspect-[1/1.4142] rounded-lg overflow-hidden border border-neutral-200 bg-neutral-50">
+        <div className="relative w-full aspect-[1/1.4142] rounded-lg overflow-hidden border border-line bg-surface-muted">
           {loading && (
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="h-6 w-6 rounded-full border-2 border-neutral-300 border-t-primary animate-spin" />
+              <div className="h-6 w-6 rounded-full border-2 border-line border-t-primary animate-spin" />
             </div>
           )}
           <iframe

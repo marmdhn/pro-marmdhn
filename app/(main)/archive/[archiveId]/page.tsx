@@ -20,7 +20,7 @@ export default async function DetailArchivePage({
         <p className="text-2xl font-bold">Project not found.</p>
         <Link
           href="/archive"
-          className="mt-6 inline-block text-sm text-neutral-500 hover:text-primary transition-colors duration-200"
+          className="mt-6 inline-block text-sm text-ink-faint hover:text-primary transition-colors duration-200"
         >
           &#8592; Back to archive
         </Link>
