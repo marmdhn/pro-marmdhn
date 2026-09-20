@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import MarLogo from "@/components/MarLogo";
@@ -118,30 +119,38 @@ const Navbar = () => {
         </div>
       </div>
 
-      {menuOpen && (
-        <div className="sm:hidden absolute inset-x-0 top-full border-t border-line bg-surface px-6 py-6 flex flex-col gap-5 shadow-lg">
-          {NAV_ITEMS.map((item) => (
-            <button
-              key={item.to}
-              onClick={() => goTo(item.to)}
-              className={`text-left text-base hover:text-primary transition-colors duration-200 ${
-                isHome && activeSection === item.to
-                  ? "text-primary"
-                  : "text-ink-muted"
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-          <Link
-            href="/cv"
-            onClick={() => setMenuOpen(false)}
-            className="text-left text-base text-ink-muted hover:text-primary transition-colors duration-200"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="sm:hidden absolute inset-x-0 top-full border-t border-line bg-surface px-6 py-6 flex flex-col gap-5 shadow-lg"
           >
-            Resume
-          </Link>
-        </div>
-      )}
+            {NAV_ITEMS.map((item) => (
+              <button
+                key={item.to}
+                onClick={() => goTo(item.to)}
+                className={`text-left text-base hover:text-primary transition-colors duration-200 ${
+                  isHome && activeSection === item.to
+                    ? "text-primary"
+                    : "text-ink-muted"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            <Link
+              href="/cv"
+              onClick={() => setMenuOpen(false)}
+              className="text-left text-base text-ink-muted hover:text-primary transition-colors duration-200"
+            >
+              Resume
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
