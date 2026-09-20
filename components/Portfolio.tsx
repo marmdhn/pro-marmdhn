@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Works } from "@/data/works";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
 const Portfolio = () => {
   return (
@@ -9,9 +10,7 @@ const Portfolio = () => {
       className="max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32"
     >
       <Reveal>
-        <h2 className="text-sm tracking-widest uppercase text-primary mb-12">
-          Selected Work
-        </h2>
+        <SectionHeading index="03" label="Selected Work" />
       </Reveal>
       <div className="flex flex-col">
         {Works.map((work, index) => (

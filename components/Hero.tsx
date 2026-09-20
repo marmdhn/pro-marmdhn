@@ -1,7 +1,30 @@
 "use client";
 
 import { Link as ScrollLink } from "react-scroll";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import Squiggle from "@/components/Squiggle";
+
+const LINE_ONE = ["Muhammad", "Akbar"];
+const LINE_TWO = ["Ramadhan"];
+
+const wordVariants: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const HeadlineLine = ({ words }: { words: string[] }) => (
+  <span className="flex flex-wrap gap-x-[0.25em]">
+    {words.map((word) => (
+      <motion.span key={word} variants={wordVariants} className="inline-block">
+        {word}
+      </motion.span>
+    ))}
+  </span>
+);
 
 const Hero = () => {
   return (
@@ -13,29 +36,35 @@ const Hero = () => {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="text-sm tracking-widest uppercase text-primary mb-6"
+        className="font-adelia italic text-2xl md:text-3xl text-primary mb-4"
       >
         Software Developer
       </motion.p>
       <motion.h1
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+        initial="hidden"
+        animate="visible"
+        variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } } }}
         className="text-5xl md:text-7xl xl:text-8xl font-bold leading-[1.05]"
       >
-        Muhammad Akbar
-        <br />
-        Ramadhan
+        <HeadlineLine words={LINE_ONE} />
+        <HeadlineLine words={LINE_TWO} />
       </motion.h1>
-      <motion.p
+      <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        className="mt-8 max-w-xl text-lg text-neutral-600 border-l-2 border-primary pl-4"
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+        className="mt-8 max-w-xl"
       >
-        I build reliable backend services and APIs for large-scale
-        applications, and full-stack products when a project needs one.
-      </motion.p>
+        <p className="text-lg text-neutral-600 border-l-2 border-primary pl-4">
+          I build reliable backend{" "}
+          <span className="relative inline-block whitespace-nowrap">
+            services and APIs
+            <Squiggle className="absolute left-0 top-full w-full h-2 -mt-1" />
+          </span>{" "}
+          for large-scale applications, and full-stack products when a
+          project needs one.
+        </p>
+      </motion.div>
       <ScrollLink
         to="about"
         smooth={true}

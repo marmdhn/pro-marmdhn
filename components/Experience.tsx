@@ -1,5 +1,6 @@
 import { Experiences } from "@/data/experiences";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
 const Experience = () => {
   return (
@@ -8,9 +9,7 @@ const Experience = () => {
       className="max-w-5xl mx-auto px-6 md:px-10 py-24 md:py-32"
     >
       <Reveal>
-        <h2 className="text-sm tracking-widest uppercase text-primary mb-12">
-          Experience
-        </h2>
+        <SectionHeading index="02" label="Experience" />
       </Reveal>
       <div className="flex flex-col">
         {Experiences.map((experience, index) => (
