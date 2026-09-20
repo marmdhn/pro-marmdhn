@@ -1,12 +1,12 @@
 "use client";
 
 import { ReactNode, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import glyphs from "@/data/marmdhnGlyphs.json";
 
 type Stage = "writing" | "curtain" | "done";
 
-const LETTER_DURATION = 1;
+const LETTER_DURATION = 0.75;
 const LETTER_OVERLAP = 0.25; // fraction of a letter still drawing when the next one starts
 const LETTER_STAGGER = LETTER_DURATION * (1 - LETTER_OVERLAP);
 const PANEL_COUNT = 10;
@@ -21,6 +21,7 @@ const CURTAIN_MS =
 
 const WritingIntro = ({ children }: { children: ReactNode }) => {
   const [stage, setStage] = useState<Stage>("writing");
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const toCurtain = setTimeout(() => setStage("curtain"), WRITE_MS);
@@ -32,11 +33,12 @@ const WritingIntro = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const isCurtain = stage === "curtain";
+  const skip = Boolean(prefersReducedMotion);
 
   return (
     <>
-      {stage !== "writing" && children}
-      {stage !== "done" && (
+      {(stage !== "writing" || skip) && children}
+      {stage !== "done" && !skip && (
         <div className="fixed inset-0 z-[100] overflow-hidden">
           {/* Panels sit here from the start, like v1's, so nothing pops in abruptly */}
           <div className="absolute inset-0 flex">
