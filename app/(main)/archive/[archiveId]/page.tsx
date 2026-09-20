@@ -1,10 +1,26 @@
 import path from "path";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Archives } from "@/data/archive";
 import { getPngDimensions } from "@/lib/getPngDimensions";
 import ArchiveDetailView from "@/components/ArchiveDetailView";
 
 const ARCHIVE_DIR = path.join(process.cwd(), "public", "archive");
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ archiveId: string }>;
+}): Promise<Metadata> {
+  const { archiveId } = await params;
+  const project = Archives.find((archive) => archive.id === archiveId);
+  return {
+    title: project?.title ?? "Archive",
+    description: project
+      ? `${project.title} — built at ${project.madeAt}.`
+      : "Project not found.",
+  };
+}
 
 export default async function DetailArchivePage({
   params,

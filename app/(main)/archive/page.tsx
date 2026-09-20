@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaGithub, FaRegEye, FaApple, FaAndroid, FaDownload } from "react-icons/fa6";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Archives } from "@/data/archive";
 import Reveal from "@/components/Reveal";
+
+export const metadata: Metadata = {
+  title: "Archive",
+  description: "A list of projects I've built.",
+};
 
 const PLATFORM_ICON = {
   Android: FaAndroid,
