@@ -119,7 +119,7 @@ const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <div className="sm:hidden border-t border-line bg-surface px-6 py-6 flex flex-col gap-5">
+        <div className="sm:hidden absolute inset-x-0 top-full border-t border-line bg-surface px-6 py-6 flex flex-col gap-5 shadow-lg">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.to}
