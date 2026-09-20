@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
@@ -8,6 +8,17 @@ const CV_URL = "/CV-Muhammad Akbar Ramadhan.pdf";
 
 const CvPage = () => {
   const [loading, setLoading] = useState(true);
+
+  // On a hard refresh, the browser starts fetching the server-rendered
+  // iframe's src before React hydrates, so the load event can fire before
+  // onLoad is attached and loading gets stuck. This ref callback runs as
+  // soon as the node mounts and catches that case by checking whether it
+  // has already finished loading.
+  const handleIframeRef = useCallback((node: HTMLIFrameElement | null) => {
+    if (node?.contentDocument?.readyState === "complete") {
+      setLoading(false);
+    }
+  }, []);
 
   return (
     <section className="max-w-4xl mx-auto px-6 md:px-10 pt-32 md:pt-40 pb-24">
@@ -39,6 +50,7 @@ const CvPage = () => {
             </div>
           )}
           <iframe
+            ref={handleIframeRef}
             src={CV_URL}
             title="CV"
             className={`w-full h-full transition-opacity duration-500 ${
