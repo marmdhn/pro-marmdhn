@@ -2,9 +2,7 @@ import type { Config } from "tailwindcss";
 import daisyui from "daisyui";
 import tailwindScrollbar from "tailwind-scrollbar";
 
-// Tailwind accepts a function here at runtime (for opacity-modifier support,
-// e.g. `bg-surface/90`), but its official Config type only allows strings —
-// cast the return type so tsc doesn't reject a perfectly valid Tailwind config.
+// Cast needed: Tailwind allows a function here at runtime, but its types don't.
 const withOpacity = (varName: string): string =>
   (({ opacityValue }: { opacityValue?: string }) =>
     opacityValue !== undefined

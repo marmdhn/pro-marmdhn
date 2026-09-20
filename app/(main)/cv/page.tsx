@@ -9,11 +9,7 @@ const CV_URL = "/CV-Muhammad Akbar Ramadhan.pdf";
 const CvPage = () => {
   const [loading, setLoading] = useState(true);
 
-  // On a hard refresh, the browser starts fetching the server-rendered
-  // iframe's src before React hydrates, so the load event can fire before
-  // onLoad is attached and loading gets stuck. This ref callback runs as
-  // soon as the node mounts and catches that case by checking whether it
-  // has already finished loading.
+  // Catches the case where the iframe already loaded before onLoad attached.
   const handleIframeRef = useCallback((node: HTMLIFrameElement | null) => {
     if (node?.contentDocument?.readyState === "complete") {
       setLoading(false);

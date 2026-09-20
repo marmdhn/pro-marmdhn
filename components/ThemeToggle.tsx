@@ -6,12 +6,7 @@ import { FaMoon, FaSun } from "react-icons/fa6";
 
 const emptySubscribe = () => () => {};
 
-// Server (and the client's first, pre-hydration render) can't know the
-// resolved theme, so this must render the same thing on both. This hook
-// stays `false` through hydration and only flips to `true` once React
-// commits on the client — the same effect as next-themes' documented
-// "mounted" guard, but via useSyncExternalStore instead of a useEffect,
-// so it doesn't trip the set-state-in-effect lint rule either.
+// Hydration-safe "mounted" flag, without an effect-based setState.
 const useHasMounted = () =>
   useSyncExternalStore(
     emptySubscribe,
@@ -19,16 +14,60 @@ const useHasMounted = () =>
     () => false,
   );
 
+interface ViewTransition {
+  ready: Promise<void>;
+}
+
+type DocumentWithViewTransitions = Document & {
+  startViewTransition?: (callback: () => void) => ViewTransition;
+};
+
 const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
   const hasMounted = useHasMounted();
   const isDark = hasMounted && resolvedTheme === "dark";
 
+  const toggleTheme = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const next = isDark ? "light" : "dark";
+    const doc = document as DocumentWithViewTransitions;
+
+    if (!doc.startViewTransition) {
+      setTheme(next);
+      return;
+    }
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    );
+
+    const transition = doc.startViewTransition(() => setTheme(next));
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        {
+          clipPath: [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`,
+          ],
+        },
+        {
+          duration: 600,
+          easing: "ease-in-out",
+          pseudoElement: "::view-transition-new(root)",
+        },
+      );
+    });
+  };
+
   return (
     <button
       type="button"
       aria-label="Toggle theme"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={toggleTheme}
       className="text-ink-muted hover:text-primary transition-colors duration-200"
     >
       {isDark ? <FaSun size={16} /> : <FaMoon size={16} />}

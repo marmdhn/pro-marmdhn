@@ -5,11 +5,7 @@ export interface Dimensions {
   height: number;
 }
 
-/**
- * Reads a PNG's intrinsic width/height straight from its IHDR chunk
- * (bytes 16-23), so images can be rendered at their real aspect ratio
- * instead of a fixed box. Every local image in this project is a PNG.
- */
+// Reads a PNG's width/height straight from its IHDR chunk (bytes 16-23).
 export function getPngDimensions(absolutePath: string): Dimensions | null {
   try {
     const fd = fs.openSync(absolutePath, "r");
