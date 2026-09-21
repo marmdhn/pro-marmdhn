@@ -13,7 +13,7 @@ export const Experiences: IExperience[] = [
     current: true,
     corporate: "Taiwan Mobile",
     description:
-      "As a Software Developer at Taiwan Mobile, I contributed as a backend engineer, developing robust services and APIs that support large-scale applications. Focused on performance optimization, system stability, and delivering reliable solutions for end users.",
+      "As a Software Developer at Taiwan Mobile, I work across backend and frontend, building robust services and APIs for large-scale applications as well as React-based web interfaces embedded as WebViews within our React Native app. Focused on performance optimization, system stability, and delivering reliable solutions for end users.",
   },
   {
     year: 2025,
