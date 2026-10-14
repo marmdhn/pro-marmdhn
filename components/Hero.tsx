@@ -41,12 +41,16 @@ const Hero = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="font-adelia italic text-2xl md:text-3xl text-primary mb-4"
       >
-        Software Developer
+        Full Stack Developer
       </motion.p>
       <motion.h1
         initial="hidden"
         animate="visible"
-        variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } } }}
+        variants={{
+          visible: {
+            transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+          },
+        }}
         className="text-5xl md:text-7xl xl:text-8xl font-bold leading-[1.05]"
       >
         <HeadlineLine words={LINE_ONE} />
@@ -64,8 +68,8 @@ const Hero = () => {
             services and APIs
             <Squiggle className="absolute left-0 top-full w-full h-2 -mt-1" />
           </span>{" "}
-          for large-scale applications, and full-stack products when a
-          project needs one.
+          for large-scale applications, and full-stack products when a project
+          needs one.
         </p>
       </motion.div>
       <button
