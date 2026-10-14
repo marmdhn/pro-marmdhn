@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'SF Mono';
-  src: url('../public/fonts/SFMonoRegular.otf') format('opentype');
+  font-family: "SF Mono";
+  src: url("../public/fonts/SFMonoRegular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Calibre';
-  src: url('../public/fonts/CalibreRegular.otf') format('opentype');
+  font-family: "Calibre";
+  src: url("../public/fonts/CalibreRegular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Adelia';
-  src: url('../public/fonts/adelia.otf') format('truetype');
+  font-family: "Adelia";
+  src: url("../public/fonts/adelia.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -51,16 +51,16 @@
 }
 
 :root {
-  --background: #1B1C21;
+  --background: #1b1c21;
   --foreground: #ededed;
 
   /* Tokens for the new (main) design only — v1 uses --background/--foreground above */
   --surface: 255 255 255;
   --surface-muted: 245 245 245;
   --ink: 23 23 23;
-  --ink-muted: 82 82 82;
-  --ink-faint: 163 163 163;
-  --ink-ghost: 236 236 236;
+  --ink-muted: 64 64 64;
+  --ink-faint: 115 115 115;
+  --ink-ghost: 214 214 214;
   --line: 229 229 229;
 }
 
@@ -68,15 +68,15 @@
   --surface: 10 10 10;
   --surface-muted: 23 23 23;
   --ink: 250 250 250;
-  --ink-muted: 163 163 163;
-  --ink-faint: 82 82 82;
-  --ink-ghost: 38 38 38;
+  --ink-muted: 215 215 215;
+  --ink-faint: 175 175 175;
+  --ink-ghost: 82 82 82;
   --line: 38 38 38;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1B1C21;
+    --background: #1b1c21;
     --foreground: #ededed;
   }
 }
@@ -109,7 +109,7 @@ html.lenis body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Calibre', sans-serif;
+  font-family: "Calibre", sans-serif;
   overflow-x: hidden;
 }
 
@@ -119,14 +119,14 @@ body {
   }
 }
 
-.section{
+.section {
   min-height: calc(100vh - 75px);
 }
 
 #loading-svg {
   height: 200px;
   width: 200px;
-  stroke: #27BBA0;
+  stroke: #27bba0;
   fill-opacity: 0;
   stroke-width: 5px;
   stroke-dasharray: 4500;
@@ -154,13 +154,12 @@ body {
   }
 }
 
-
 @keyframes draw {
   0% {
     stroke-dashoffset: 4500;
   }
   100% {
-    stroke-dashoffset:0;
+    stroke-dashoffset: 0;
   }
 }
 
@@ -169,7 +168,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid #27BBA0;
+  outline: 2px solid #27bba0;
   outline-offset: 2px;
 }
 
