@@ -1,6 +1,7 @@
 export const skills = [
   "JavaScript",
   "TypeScript",
+  "Java",
   "HTML",
   "CSS",
   "Dart",
@@ -9,6 +10,7 @@ export const skills = [
   "DB2",
 
   "React",
+  "Angular",
   "Next.js",
   "Vue",
   "Nuxt.js",
@@ -21,6 +23,9 @@ export const skills = [
 
   "Git",
   "GitHub",
+  "GitLab",
+  "Swagger",
+  "ELK Stack",
   "Vercel",
   "Figma",
 ];
