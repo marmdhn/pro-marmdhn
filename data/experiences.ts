@@ -9,11 +9,19 @@ interface IExperience {
 export const Experiences: IExperience[] = [
   {
     year: 2026,
-    title: "Software Developer",
+    title: "Full Stack Developer",
     current: true,
+    corporate: "PT Bank Mandiri (Persero) Tbk.",
+    description:
+      "As a Full Stack Developer at Bank Mandiri, I build internal tools and data-driven dashboards using Angular and Spring Boot. I also work with the ELK stack (Elasticsearch, Logstash, Kibana) for log data processing and visualization, collaborating with cross-functional teams to support data analytics and system monitoring initiatives.",
+  },
+  {
+    year: 2026,
+    title: "Software Developer",
+    current: false,
     corporate: "Taiwan Mobile",
     description:
-      "As a Software Developer at Taiwan Mobile, I work across backend and frontend, building robust services and APIs for large-scale applications as well as React-based web interfaces embedded as WebViews within our React Native app. Focused on performance optimization, system stability, and delivering reliable solutions for end users.",
+      "As a Software Developer at Taiwan Mobile, I developed and maintained internal enterprise web applications using React.js, Spring Boot, and DB2. I took part in legacy system modernization and application rewrite initiatives, analyzing legacy codebases to support migration planning, while handling API integration, feature enhancement, and bug fixing across front-end and back-end systems alongside QA, PM, Infrastructure, and technical leads in Agile teams.",
   },
   {
     year: 2025,
