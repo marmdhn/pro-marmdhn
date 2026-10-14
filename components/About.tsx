@@ -20,12 +20,15 @@ const About = () => {
         </span>
         <p className="relative text-2xl md:text-3xl leading-relaxed text-ink">
           I&apos;m a{" "}
-          <span className="font-adelia italic text-primary">software developer</span>{" "}
-          currently working across backend and frontend at Taiwan Mobile,
-          building services and APIs alongside React-based web interfaces for
-          large-scale enterprise applications. Before that, I worked across
-          mobile and front-end teams at Telkom Foundation, shipping products
-          in Flutter, Vue, and React.
+          <span className="font-adelia italic text-primary">
+            Full Stack Developer
+          </span>{" "}
+          currently working across backend and frontend at Bank Mandiri,
+          building internal tools and data-driven dashboards with Angular,
+          Spring Boot, and the ELK stack. Before that, I worked on enterprise
+          web applications and legacy system modernization at Taiwan Mobile, and
+          on mobile and front-end products at Telkom Foundation, shipping in
+          Flutter, Vue, and React.
         </p>
       </Reveal>
       <Reveal delay={0.2} className="mt-12">
