@@ -7,6 +7,38 @@ interface IWorks {
   websiteUrl: string;
 }
 
+interface IMobileWorks {
+  imgUrl?: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  playStoreUrl: string;
+  appStoreUrl: string;
+}
+
+export const MobileWorks: IMobileWorks[] = [
+  {
+    imgUrl: "digits-mobile.jpg",
+    title: "DIGITS",
+    description:
+      "DIGITS is an integrated academic super app for Telkom Schools, where students and parents can manage and track class schedules, attendance, and student achievement in real time.",
+    techStack: ["Flutter", "Dart"],
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.ypt.tsmobile&hl=en_US",
+    appStoreUrl: "https://apps.apple.com/id/app/digits/id6737196253",
+  },
+  {
+    imgUrl: "digits-paud-mobile.jpg",
+    title: "DIGITS For PAUD",
+    description:
+      "DIGITS For PAUD lets parents keep an eye on their children at school by viewing school CCTV footage from anywhere, staying connected to their daily activities.",
+    techStack: ["Flutter", "Dart"],
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.ypt.digitk&hl=en_US",
+    appStoreUrl: "https://apps.apple.com/id/app/digits-for-paud/id6803765613",
+  },
+];
+
 export const Works: IWorks[] = [
   {
     imgUrl: "ppdb-telkomschools.png",

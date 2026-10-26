@@ -39,6 +39,29 @@ export const Archives: IArchive[] = [
     status: "Done",
   },
   {
+    id: "mobile-digits-paud",
+    year: 2026,
+    title: "Mobile App DIGITS For PAUD",
+    madeAt: "Telkom Foundation",
+    buildWith: ["Flutter", "Dart"],
+    link: {
+      webUrl: "",
+      downloadUrl: [
+        {
+          platform: "Android",
+          url: "https://play.google.com/store/apps/details?id=com.ypt.digitk&hl=en_US",
+        },
+        {
+          platform: "iOS",
+          url: "https://apps.apple.com/id/app/digits-for-paud/id6803765613",
+        },
+      ],
+      gitHubUrl: "",
+    },
+    detail: false,
+    status: "Done",
+  },
+  {
     id: "mobile-digits",
     year: 2025,
     title: "Mobile App DIGITS",
