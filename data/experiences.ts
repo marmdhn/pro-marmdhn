@@ -13,7 +13,7 @@ export const Experiences: IExperience[] = [
     current: true,
     corporate: "PT Bank Mandiri (Persero) Tbk.",
     description:
-      "As a Full Stack Developer at Bank Mandiri, I build internal tools and data-driven dashboards using Angular and Spring Boot. I also work with the ELK stack (Elasticsearch, Logstash, Kibana) for log data processing and visualization, collaborating with cross-functional teams to support data analytics and system monitoring initiatives.",
+      "As a Full Stack Developer at Bank Mandiri, I build internal tools and data-driven dashboards using Spring Boot. I also work with the ELK stack (Elasticsearch, Logstash, Kibana) for log data processing and visualization, collaborating with cross-functional teams to support data analytics and system monitoring initiatives.",
   },
   {
     year: 2026,

@@ -24,10 +24,10 @@ const About = () => {
             Full Stack Developer
           </span>{" "}
           currently working across backend and frontend at Bank Mandiri,
-          building internal tools and data-driven dashboards with Angular,
-          Spring Boot, and the ELK stack. Before that, I worked on enterprise
-          web applications and legacy system modernization at Taiwan Mobile, and
-          on mobile and front-end products at Telkom Foundation, shipping in
+          building internal tools and data-driven dashboards with Spring Boot,
+          and the ELK stack. Before that, I worked on enterprise web
+          applications and legacy system modernization at Taiwan Mobile, and on
+          mobile and front-end products at Telkom Foundation, shipping in
           Flutter, Vue, and React.
         </p>
       </Reveal>

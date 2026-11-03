@@ -10,7 +10,6 @@ export const skills = [
   "DB2",
 
   "React",
-  "Angular",
   "Next.js",
   "Vue",
   "Nuxt.js",
